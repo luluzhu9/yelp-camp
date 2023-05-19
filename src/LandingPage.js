@@ -5,7 +5,7 @@ import BookingLogo from './media/Booking.svg';
 import PlumLogo from './media/Plum Guide.svg';
 import './LandingPage.css';
 
-function LandingPage() {
+function LandingPage({setLandingIsShown}) {
     return(
         <div className="landing-page">
             <div className="landing-page-left">
@@ -18,7 +18,7 @@ function LandingPage() {
                         <li>Leave reviews and experiences.</li>
                         <li>See locations for all camps.</li>
                     </ul>
-                    <button>View Campgrounds</button>
+                    <button onClick={(e) => setLandingIsShown(false)}>View Campgrounds</button>
                     <p>Partnered with:</p>
                     <div className="sponsor-gallery">
                         <img src={AirbnbLogo} alt="airbnb-logo"/>

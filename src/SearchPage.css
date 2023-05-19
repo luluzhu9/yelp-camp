@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+}
+
+.search-page {
+    padding: 1.5vw 9vw 1.5vw 9vw;
+}

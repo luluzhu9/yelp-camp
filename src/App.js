@@ -3,10 +3,13 @@ import database from './firebase.js';
 import './App.css';
 import LandingPage from './LandingPage.js';
 import SearchPage from './SearchPage.js';
+import SignUpPage from './SignUpPage.js';
 
 function App() {
-  const [landingIsShown, setLandingIsShown] = useState(true);
   const [campData, setCampData] = useState([]);
+  const [landingIsShown, setLandingIsShown] = useState(true);
+  const [searchPageIsShown, setSearchPageIsShown] = useState(false);
+  const [signUpPageIsShown, setSignUpPageIsShown] = useState(false);
   
   /* GET data from Firebase Realtime Database */
   useEffect(() => {
@@ -15,11 +18,6 @@ function App() {
           ref.on("value", snapshot => {
             let data = snapshot.val();
             setCampData(data);
-            /*let tempArray = [];
-            snapshot.forEach((childSnapshot) => {
-              tempArray[childSnapshot.key] = childSnapshot.val();
-              setCampData(JSON.stringify(tempArray));
-            });*/
           })
         } catch (error) {
           console.log(error);
@@ -28,8 +26,9 @@ function App() {
 
   return (
     <div className="App">
-      {landingIsShown && (<LandingPage setLandingIsShown={setLandingIsShown}/>)}
-      {!landingIsShown && (<SearchPage campData={campData}/>)}
+      {landingIsShown && (<LandingPage setLandingIsShown={setLandingIsShown} setSearchPageIsShown={setSearchPageIsShown}/>)}
+      {searchPageIsShown && (<SearchPage campData={campData} setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}/>)}
+      {signUpPageIsShown && (<SignUpPage />)}
     </div>
   );
 }

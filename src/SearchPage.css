@@ -5,13 +5,19 @@
 }
 
 .search-page {
-    padding: 1.5vw 9vw 1.5vw 9vw;
+    padding: 1.5vw 9vw 5vw 9vw;
 }
 
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2.vw;
+    gap: 2vw;
     margin: 5vw 0vw 5vw 0vw;
+}
+
+.yelp-camp-icon {
+    display: flex;
+    justify-content: flex-start;
+    width: 8vw;
 }

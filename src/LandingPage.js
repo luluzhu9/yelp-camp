@@ -1,3 +1,4 @@
+import React from 'react';
 import YelpCampIcon from './media/Logo.svg';
 import HeroImage from './media/Hero Image.jpg';
 import AirbnbLogo from './media/Airbnb.svg';

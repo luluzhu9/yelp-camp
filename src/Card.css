@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 29%;
+    height: auto;
+    border: 0.1vw solid rgb(220, 220, 220);
+    border-radius: 0.3vw;
+    padding: 1vw;
+    text-align: left;
+    gap: 1vw;
+}
+
+.card-container img {
+    max-height: 14vw;
+    object-fit: cover;
+    border-radius: 0.4vw;
+}
+
+.card-container h1 {
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.card-container p {
+    font-size: 1.3vw;
+    line-height: 1.9vw;
+    color: rgb(91, 91, 91);
+}
+
+.card-container button {
+    background: white;
+    color: black;
+    padding: 1.2vw;
+    border-radius: 0.3vw;
+    font-weight: bold;
+    font-size: 1.3vw;
+    border: 0.1vw solid rgb(220, 220, 220);
+}

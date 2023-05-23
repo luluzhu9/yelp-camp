@@ -1,3 +1,4 @@
+import React from 'react';
 import YelpCampIcon from './media/Logo.svg';
 import './Header.css';
 

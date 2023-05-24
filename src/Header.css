@@ -57,3 +57,15 @@
     font-size: 1.25vw;
     cursor: pointer;
 }
+
+.user-email {
+    font-size: 1.25vw;
+    font-weight: bold;
+    color: rgb(77, 77, 77);
+}
+
+.logout {
+    color: rgb(116, 116, 116);
+    font-size: 1.25vw;
+    cursor: pointer;
+}

@@ -99,18 +99,18 @@ label, input{
     cursor: pointer;
 }
 
-.already-a-user {
+.toggle-sign-in-up {
     display: flex;
     flex-direction: row;
     gap: 0.5vw;
 }
 
-.already-a-user p {
+.toggle-sign-in-up p {
     color: rgb(89, 89, 89);
     font-size: 1.1vw;
 }
 
-.already-a-user button {
+.toggle-sign-in-up button {
     border: none;
     outline: none;
     background-color: transparent;
@@ -149,6 +149,18 @@ label, input{
 }
 
 .create-an-account {
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    padding: 1.4vw;
+    border-radius: 0.3vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+    cursor: pointer;
+}
+
+.login {
     border: none;
     outline: none;
     background: black;

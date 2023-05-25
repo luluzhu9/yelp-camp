@@ -3,10 +3,17 @@ import YelpCampIcon from './media/Logo.svg';
 import './Header.css';
 import {auth} from './firebase.js';
 
-function Header({setSearchPageIsShown, setSignUpPageIsShown, user}) {
+function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown}) {
     function handleCreateAccount (event) {
         setSearchPageIsShown(false);
         setSignUpPageIsShown(true);
+        setLoginPageIsShown(false);
+    }
+
+    function handleLogin (event) {
+        setSearchPageIsShown(false);
+        setLoginPageIsShown(true);
+        setSignUpPageIsShown(false);
     }
 
     async function handleLogout (event) {
@@ -22,7 +29,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user}) {
                 <button>Home</button>
             </div>
             <div className="header-right">
-                {user == null && (<button className="login-button">Login</button>)}
+                {user == null && (<button className="login-button" onClick={handleLogin}>Login</button>)}
                 {user == null && (<button className="create-account-button" onClick={handleCreateAccount}>Create an account</button>)}
                 {user != null && (<p className="user-email">{user.email}</p>)}
                 {user != null && (<p className="logout" onClick={handleLogout}>Logout</p>)}

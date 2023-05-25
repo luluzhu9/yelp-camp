@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+}
+
+.single-camp-page-container {
+    padding: 1.5vw 9vw 5vw 9vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-camp-column {
+    display: flex;
+    flex-direction: row;
+}
+
+.single-camp-column img {
+    padding: 3vw;
+    border: solid 0.1vw rgb(220, 220, 220);
+    border-radius: 0.35vw;
+}

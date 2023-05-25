@@ -1,7 +1,7 @@
 import React from 'react';
 import './HelperBanner.css';
 
-function HelperBanner (){
+function HelperBanner ({user}){
     return(
         <div className="helper-banner-container">
             <div className="helper-banner-inner">   
@@ -12,7 +12,7 @@ function HelperBanner (){
                     <input type="search" placeholder="Search for camps"></input>
                     <button type="submit">Search</button>
                 </form>
-                <p className="add-campground">Or add your own campground</p>
+                {user != null && (<p className="add-campground">Or add your own campground</p>)}
             </div>
         </div>
     )

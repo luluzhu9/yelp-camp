@@ -41,4 +41,11 @@
     font-weight: bold;
     font-size: 1.3vw;
     border: 0.1vw solid rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+.card-container button:hover {
+    background: black;
+    color: white;
+    border: none;
 }

@@ -47,5 +47,5 @@
 .card-container button:hover {
     background: black;
     color: white;
-    border: none;
+    border: 0.1vw solid black;
 }

@@ -10,13 +10,101 @@
     flex-direction: column;
 }
 
-.single-camp-column {
+.main-body {
     display: flex;
     flex-direction: row;
+    gap: 4vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
 }
 
-.single-camp-column img {
+.map-image {
     padding: 3vw;
     border: solid 0.1vw rgb(220, 220, 220);
     border-radius: 0.35vw;
+    object-fit: cover;
+    width: 45vw;
+    height: 28vw;
+}
+
+.main-descrip {
+    border: solid 0.1vw rgb(220, 220, 220);
+    padding: 3vw;
+    border-radius: 0.35vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1vw;
+}
+
+.camp-image {
+    width: 100%;
+    border-radius: 0.35vw;
+    object-fit: cover;
+}
+
+.main-descrip-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-descrip-row h1 {
+    font-size: 1.75vw;
+}
+
+.main-descrip-row p {
+    font-size: 1.25vw;
+}
+
+.long-descrip {
+    font-size: 1.25vw;
+    line-height: 2vw;
+    color: rgb(93, 93, 93);
+}
+
+.submitted-by {
+    font-size: 1.25vw;
+    font-style: italic;
+    color: rgb(93, 93, 93);
+}
+
+.single-camp-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+}
+
+.reviews-container {
+    border: solid 0.1vw rgb(220, 220, 220);
+    padding: 3vw;
+    border-radius: 0.35vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1vw;
+}
+
+.leave-review-btn {
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    height: 80%;
+    padding: 1.4vw;
+    border-radius: 0.3vw;
+    font-weight: bold;
+    font-size: 1.25vw;
+    cursor: pointer;
+    width: 15vw;
+    margin: 1vw 0vw 0.25vw auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leave-review-btn i {
+    font-size: 1.75vw;
+    margin-right: 0.75vw;
 }

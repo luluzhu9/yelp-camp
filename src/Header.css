@@ -28,6 +28,7 @@
     font-size: 1.25vw;
     font-weight: bold;
     color: rgb(77, 77, 77);
+    cursor: pointer;
 }
 
 .header-right {

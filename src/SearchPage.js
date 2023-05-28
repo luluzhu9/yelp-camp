@@ -5,11 +5,13 @@ import Card from './Card.js';
 import './SearchPage.css'
 import YelpCampIcon from './media/Logo.svg';
 
-function SearchPage({campData, setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, setCurrCamp}) {
-    return(
+function SearchPage({campData, setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
+    setCurrCamp}) {
+    
+        return(
         <div className="search-page">
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown}/>
+                user={user} setLoginPageIsShown={setLoginPageIsShown} setCurrCamp={setCurrCamp}/>
             <HelperBanner user={user}/>
             <div className="gallery-container">
                 {Object.keys(campData).length !== 0 && campData.map((camp) => (

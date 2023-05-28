@@ -5,6 +5,7 @@ import LandingPage from './LandingPage.js';
 import SearchPage from './SearchPage.js';
 import SignUpInPage from './SignUpInPage.js';
 import SingleCampPage from './SingleCampPage.js';
+import AddCommentPage from './AddCommentPage.js';
 
 function App() {
   const [campData, setCampData] = useState([]);
@@ -14,6 +15,7 @@ function App() {
   const [searchPageIsShown, setSearchPageIsShown] = useState(false);
   const [signUpPageIsShown, setSignUpPageIsShown] = useState(false);
   const [loginPageIsShown, setLoginPageIsShown] = useState(false);
+  const [addCommentPageIsShown, setAddCommentPageIsShown] = useState(false);
 
   /* Campsite for single camp page, used to toggle page on and off */
   const [currCamp, setCurrCamp] = useState(null);
@@ -59,7 +61,10 @@ function App() {
         setSearchPageIsShown={setSearchPageIsShown} loginPageIsShown={loginPageIsShown}
         setLoginPageIsShown={setLoginPageIsShown}/> )}
       {currCamp != null && (<SingleCampPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown}/>)}
+        user={user} setLoginPageIsShown={setLoginPageIsShown} setCurrCamp={setCurrCamp} currCamp={currCamp}
+        setAddCommentPageIsShown={setAddCommentPageIsShown}/>)}
+      {addCommentPageIsShown && (<AddCommentPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
+                user={user} setLoginPageIsShown={setLoginPageIsShown} setCurrCamp={setCurrCamp}/>)}
     </div>
   );
 }

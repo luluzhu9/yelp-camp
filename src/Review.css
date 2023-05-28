@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+}
+
+.review-container {
+    border-bottom: 0.1vw solid rgb(220, 220, 220);
+    padding-bottom: 1.5vw;
+    padding-top: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.review-container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-container-row h1 {
+    font-size: 1.3vw;
+}
+
+.review-container-row p {
+    color: rgb(93, 93, 93);
+    font-size: 1.1vw;
+}
+
+.review-submission {
+    line-height: 1.75vw;
+    font-size: 1.2vw;
+    color: rgb(93, 93, 93);
+}

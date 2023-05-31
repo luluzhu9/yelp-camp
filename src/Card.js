@@ -1,14 +1,17 @@
 import React from 'react';
 import './Card.css';
 
-function Card({camp, setCurrCamp, setSearchPageIsShown}) {
+function Card({camp, setSingleCampPageIsShown, setSearchPageIsShown, setCurrCamp, id, setCurrID}) {
     function handleViewCamp (event) {
-        setCurrCamp(camp);
+        setSingleCampPageIsShown(true);
         setSearchPageIsShown(false);
+        setCurrCamp(camp);
+        setCurrID(id);
     }
 
     return(
         <div className="card-container">
+            {console.log("here", id)}
             <img src={camp.picture} alt="camp"></img>
             <h1>{camp.name}</h1>
             <p>{camp.description}</p>

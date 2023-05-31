@@ -6,17 +6,18 @@ import YelpCampIcon from './media/Logo.svg';
 import Map from './media/Map.png';
 
 function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setCurrCamp, currCamp, setAddCommentPageIsShown}) {
+    setSingleCampPageIsShown, currCamp, setAddCommentPageIsShown}) {
 
     function handleLeaveReview (event) {
         setAddCommentPageIsShown(true);
-        setCurrCamp(null);
+        setSingleCampPageIsShown(false);
     }
 
     return(
         <div className="single-camp-page-container">
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown} setCurrCamp={setCurrCamp}/>
+                user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
+                setAddCommentPageIsShown={setAddCommentPageIsShown}/>
             <div className="main-body">
                 <img className="map-image" src={Map} alt="map"></img>
                 <div className="single-camp-column">
@@ -30,7 +31,8 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
                         <p className="submitted-by">Submitted By {currCamp.descripBy}</p>
                     </div>
                     <div className="reviews-container">
-                        {currCamp.reviews.map(review => (
+                        {/* Map backwards to display chronologically */}
+                        {currCamp.reviews.slice(0).reverse().map(review => (
                             <Review review={review}/>
                         ))}
                         {user != null && (

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+}
+
+.add-camp-container {
+    padding: 1.5vw 9vw 5vw 9vw;
+}
+
+.add-camp-center {
+    /*display: flex;
+    flex-direction: column;*/
+    text-align: left;
+    width: 37vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+}
+
+.add-camp-center form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+    gap: 1vw;
+}
+
+.add-camp-center h1 {
+    font-size: 2.5vw;
+}
+
+.add-camp-center form label {
+    font-size: 1.25vw;
+    color: rgb(89, 89, 89);
+    margin-top: 0.5vw;
+}
+
+.add-camp-center form input {
+    border: none;
+    background-color: rgb(247, 247, 247);
+    border-radius: 0.3vw;
+    padding: 1.5vw;
+    font-size: 1.2vw;
+    line-height: 1.75vw;
+    color: rgb(165, 165, 165);
+}
+
+.add-camp-center form input::placeholder {
+    color: rgb(165, 165, 165);
+}
+
+.add-camp-center form textarea {
+    height: 12vw;
+    resize: none;
+    border: none;
+    background-color: rgb(247, 247, 247);
+    border-radius: 0.3vw;
+    padding: 1.5vw;
+    font-size: 1.2vw;
+    line-height: 1.75vw;
+    color: rgb(165, 165, 165);
+}
+
+.add-camp-center form textarea::placeholder {
+    opacity: 1;
+    color: rgb(165, 165, 165);
+}
+
+.add-camp-center form button {
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    padding: 1.4vw;
+    border-radius: 0.3vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+    cursor: pointer;
+    margin-top: 0.5vw;
+}

@@ -6,6 +6,7 @@ import SearchPage from './SearchPage.js';
 import SignUpInPage from './SignUpInPage.js';
 import SingleCampPage from './SingleCampPage.js';
 import AddCommentPage from './AddCommentPage.js';
+import AddCampPage from './AddCampPage.js';
 
 function App() {
   const [campData, setCampData] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   const [loginPageIsShown, setLoginPageIsShown] = useState(false);
   const [addCommentPageIsShown, setAddCommentPageIsShown] = useState(false);
   const [singleCampPageIsShown, setSingleCampPageIsShown] = useState(false);
+  const [addCampPageIsShown, setAddCampPageIsShown] = useState(false);
 
   /* Stores what campsite user is currently viewing */
   const [currCamp, setCurrCamp] = useState(null);
@@ -60,7 +62,7 @@ function App() {
       {searchPageIsShown && (<SearchPage campData={campData} setSearchPageIsShown={setSearchPageIsShown} 
         setSignUpPageIsShown={setSignUpPageIsShown} user={user} setLoginPageIsShown={setLoginPageIsShown}
         setSingleCampPageIsShown={setSingleCampPageIsShown} setCurrCamp={setCurrCamp} setCurrID={setCurrID}
-        setAddCommentPageIsShown={setAddCommentPageIsShown}/>)}
+        setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}/>)}
       {(signUpPageIsShown || loginPageIsShown) && (<SignUpInPage email={email} setEmail={setEmail} password={password} 
         setPassword={setPassword} setSignUpPageIsShown={setSignUpPageIsShown} 
         setSearchPageIsShown={setSearchPageIsShown} loginPageIsShown={loginPageIsShown}
@@ -71,6 +73,9 @@ function App() {
       {addCommentPageIsShown && (<AddCommentPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
         user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown} currCamp={currCamp}
         currID={currID} setAddCommentPageIsShow={setAddCommentPageIsShown}/>)}
+      {addCampPageIsShown && (<AddCampPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
+                user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
+                setAddCommentPageIsShown={setAddCommentPageIsShown}/>)}
     </div>
   );
 }

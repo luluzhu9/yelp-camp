@@ -72,4 +72,5 @@
     font-size: 1.2vw;
     text-decoration-line: underline;
     text-decoration-skip-ink: none;
+    cursor: pointer;
 }

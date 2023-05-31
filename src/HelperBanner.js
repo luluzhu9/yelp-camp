@@ -1,7 +1,12 @@
 import React from 'react';
 import './HelperBanner.css';
 
-function HelperBanner ({user}){
+function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown}){
+    function handleAddCamp(event) {
+        setAddCampPageIsShown(true);
+        setSearchPageIsShown(false);
+    }
+
     return(
         <div className="helper-banner-container">
             <div className="helper-banner-inner">   
@@ -12,7 +17,7 @@ function HelperBanner ({user}){
                     <input type="search" placeholder="Search for camps"></input>
                     <button type="submit">Search</button>
                 </form>
-                {user != null && (<p className="add-campground">Or add your own campground</p>)}
+                {user != null && (<p className="add-campground" onClick={handleAddCamp}>Or add your own campground</p>)}
             </div>
         </div>
     )

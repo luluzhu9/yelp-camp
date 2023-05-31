@@ -7,7 +7,7 @@ import YelpCampIcon from './media/Logo.svg';
 import {database} from './firebase.js';
 
 function SearchPage({campData, setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, setCurrCamp, setCurrID, setAddCommentPageIsShown}) { 
+    setSingleCampPageIsShown, setCurrCamp, setCurrID, setAddCommentPageIsShown, setAddCampPageIsShown}) { 
     
         function getId(campName) {
             const campsRef = database.ref('camps');
@@ -28,7 +28,7 @@ function SearchPage({campData, setSearchPageIsShown, setSignUpPageIsShown, user,
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
                 user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
                 setAddCommentPageIsShown={setAddCommentPageIsShown}/>
-            <HelperBanner user={user}/>
+            <HelperBanner user={user} setAddCampPageIsShown={setAddCampPageIsShown} setSearchPageIsShown={setSearchPageIsShown}/>
             <div className="gallery-container">
                 {Object.keys(campData).length !== 0 && campData.map((camp) => (
                     <Card camp={camp} setSingleCampPageIsShown={setSingleCampPageIsShown} 

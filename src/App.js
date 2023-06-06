@@ -9,6 +9,7 @@ import AddCommentPage from './AddCommentPage.js';
 import AddCampPage from './AddCampPage.js';
 
 function App() {
+  const [filteredCamps, setFilteredCamps] = useState([]);
   const [campData, setCampData] = useState([]);
 
   /* State that control which pages are open/closed */
@@ -26,6 +27,9 @@ function App() {
   /* ID of campsite user is currently viewing */
   const [currID, setCurrID] = useState(null);
 
+  /* Search value for resetting when leaving search page*/
+  const [currSearch, setCurrSearch] = useState("");
+
   /* User auth states*/
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,6 +41,7 @@ function App() {
         try {
           ref.on("value", snapshot => {
             let data = snapshot.val();
+            setFilteredCamps(data);
             setCampData(data);
           })
         } catch (error) {
@@ -59,23 +64,34 @@ function App() {
     <div className="App">
       {landingIsShown && (<LandingPage setLandingIsShown={setLandingIsShown} 
         setSearchPageIsShown={setSearchPageIsShown}/>)}
-      {searchPageIsShown && (<SearchPage campData={campData} setSearchPageIsShown={setSearchPageIsShown} 
+      
+      {searchPageIsShown && (<SearchPage filteredCamps={filteredCamps} setSearchPageIsShown={setSearchPageIsShown} 
         setSignUpPageIsShown={setSignUpPageIsShown} user={user} setLoginPageIsShown={setLoginPageIsShown}
         setSingleCampPageIsShown={setSingleCampPageIsShown} setCurrCamp={setCurrCamp} setCurrID={setCurrID}
-        setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}/>)}
+        setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+        campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}
+        currSearch={currSearch}/>)}
+      
       {(signUpPageIsShown || loginPageIsShown) && (<SignUpInPage email={email} setEmail={setEmail} password={password} 
         setPassword={setPassword} setSignUpPageIsShown={setSignUpPageIsShown} 
         setSearchPageIsShown={setSearchPageIsShown} loginPageIsShown={loginPageIsShown}
-        setLoginPageIsShown={setLoginPageIsShown}/> )}
+        setLoginPageIsShown={setLoginPageIsShown} setCurrSearch={setCurrSearch}
+        campData={campData} setFilteredCamps={setFilteredCamps} setSingleCampPageIsShown={setSingleCampPageIsShown}/> )}
+      
       {singleCampPageIsShown && (<SingleCampPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
         user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown} currCamp={currCamp}
-        setAddCommentPageIsShown={setAddCommentPageIsShown} />)}
+        setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown} campData={campData}
+        setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>)}
+      
       {addCommentPageIsShown && (<AddCommentPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
         user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown} currCamp={currCamp}
-        currID={currID} setAddCommentPageIsShow={setAddCommentPageIsShown}/>)}
+        currID={currID} setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+        campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>)}
+
       {addCampPageIsShown && (<AddCampPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown}/>)}
+        user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
+        setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+        setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>)}
     </div>
   );
 }

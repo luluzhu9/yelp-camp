@@ -5,7 +5,8 @@ import YelpCampIcon from './media/Logo.svg';
 import {auth} from './firebase.js';
 
 function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsShown, 
-    setSearchPageIsShown, loginPageIsShown, setLoginPageIsShown}) {
+    setSearchPageIsShown, loginPageIsShown, setLoginPageIsShown, setCurrSearch,
+    campData, setFilteredCamps, setSingleCampPageIsShown}) {
 
     async function handleSubmit (event) {
         event.preventDefault();
@@ -13,22 +14,24 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
         if(loginPageIsShown) {
             await auth.signInWithEmailAndPassword(email, password)
             .then((result) => {
-                console.log(result.user);
-                alert('Login Successful!')
+                alert('Login Successful!');
+                setSearchPageIsShown(true);
+                setLoginPageIsShown(false);
+                setSingleCampPageIsShown(false);
             })
             .catch(error => alert(error.message))
-            setEmail('');
-            setPassword('');
         } else {
             await auth.createUserWithEmailAndPassword(email, password)
             .then((result) => {
-                console.log(result.user);
                 alert('Sign Up Successful!')
+                setSearchPageIsShown(true);
+                setSignUpPageIsShown(false);
+                setSingleCampPageIsShown(false);
             })
             .catch(error => alert(error.message))
-            setEmail('');
-            setPassword('');
         }
+        setEmail('');
+        setPassword('');
     }
 
     function handleSignIn (event) {
@@ -47,6 +50,9 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
         setSignUpPageIsShown(false);
         setLoginPageIsShown(false);
         setSearchPageIsShown(true);
+        setCurrSearch("");
+        /* Reset filteredCamps to camps*/
+        setFilteredCamps(campData);
     }
 
     return(

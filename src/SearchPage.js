@@ -6,8 +6,9 @@ import './SearchPage.css'
 import YelpCampIcon from './media/Logo.svg';
 import {database} from './firebase.js';
 
-function SearchPage({campData, setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, setCurrCamp, setCurrID, setAddCommentPageIsShown, setAddCampPageIsShown}) { 
+function SearchPage({filteredCamps, setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
+    setSingleCampPageIsShown, setCurrCamp, setCurrID, setAddCommentPageIsShown, setAddCampPageIsShown,
+    campData, setFilteredCamps, setCurrSearch, currSearch}) { 
     
         function getId(campName) {
             const campsRef = database.ref('camps');
@@ -27,10 +28,13 @@ function SearchPage({campData, setSearchPageIsShown, setSignUpPageIsShown, user,
         <div className="search-page">
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
                 user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown}/>
-            <HelperBanner user={user} setAddCampPageIsShown={setAddCampPageIsShown} setSearchPageIsShown={setSearchPageIsShown}/>
+                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps} currSearch={currSearch} setCurrSearch={setCurrSearch}/>
+            <HelperBanner user={user} setAddCampPageIsShown={setAddCampPageIsShown} 
+                setSearchPageIsShown={setSearchPageIsShown} campData={campData} setFilteredCamps={setFilteredCamps}
+                setCurrSearch={setCurrSearch} currSearch={currSearch}/>
             <div className="gallery-container">
-                {Object.keys(campData).length !== 0 && campData.map((camp) => (
+                {Object.keys(filteredCamps).length !== 0 && filteredCamps.map((camp) => (
                     <Card camp={camp} setSingleCampPageIsShown={setSingleCampPageIsShown} 
                     setSearchPageIsShown={setSearchPageIsShown} setCurrCamp={setCurrCamp}
                     id={getId(camp.name)} setCurrID={setCurrID}/>

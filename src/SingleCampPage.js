@@ -4,20 +4,47 @@ import Header from './Header.js';
 import Review from './Review.js';
 import YelpCampIcon from './media/Logo.svg';
 import Map from './media/Map.png';
+import {database} from './firebase.js';
 
 function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, currCamp, setAddCommentPageIsShown}) {
+    setSingleCampPageIsShown, currCamp, setAddCommentPageIsShown, setAddCampPageIsShown, campData, 
+    setFilteredCamps, setCurrSearch}) {
 
     function handleLeaveReview (event) {
         setAddCommentPageIsShown(true);
         setSingleCampPageIsShown(false);
     }
 
+    function getReviews () {
+
+        /* Get ID for path*/
+        const campsRef = database.ref('camps');
+        var key; 
+
+        campsRef.on('value', snapshot => {
+            snapshot.forEach(child => {
+                if(child.val().name === currCamp.name){
+                    key = child.key;
+                }
+            })
+        })
+
+        const reviewsRef = database.ref('camps/' + key + '/reviews');
+        var reviews;
+
+        reviewsRef.on('value', snapshot => {
+            reviews = snapshot.val();
+        })
+
+        return reviews;
+    }
+
     return(
         <div className="single-camp-page-container">
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
                 user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown}/>
+                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>
             <div className="main-body">
                 <img className="map-image" src={Map} alt="map"></img>
                 <div className="single-camp-column">
@@ -32,9 +59,10 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
                     </div>
                     <div className="reviews-container">
                         {/* Map backwards to display chronologically */}
-                        {currCamp.reviews.slice(0).reverse().map(review => (
+                        {getReviews().slice(0).reverse().map(review => (
                             <Review review={review}/>
                         ))}
+
                         {user != null && (
                             <button className="leave-review-btn" onClick={handleLeaveReview}>
                                 <i class="fa fa-commenting-o" aria-hidden="true"></i>Leave a Review

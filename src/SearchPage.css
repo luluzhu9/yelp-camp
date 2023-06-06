@@ -11,7 +11,6 @@
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 2vw;
     margin: 5vw 0vw 5vw 0vw;
 }

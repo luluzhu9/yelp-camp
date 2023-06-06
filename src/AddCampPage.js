@@ -4,7 +4,8 @@ import Header from './Header.js';
 import YelpCampIcon from './media/Logo.svg';
 
 function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown, 
-    user, setLoginPageIsShown, setSingleCampPageIsShown, setAddCommentPageIsShown}) {
+    user, setLoginPageIsShown, setSingleCampPageIsShown, setAddCommentPageIsShown, setAddCampPageIsShown, 
+    campData, setFilteredCamps, setCurrSearch}) {
 
     /* Note: strip dollar sign from price to make sure input style is correct */
 
@@ -12,7 +13,8 @@ function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown,
         <div className="add-camp-container">
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
                 user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown}/>
+                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>
             <div className="add-camp-center">
                 <h1>Add New Campground</h1>
                 <form>

@@ -11,7 +11,6 @@ function Card({camp, setSingleCampPageIsShown, setSearchPageIsShown, setCurrCamp
 
     return(
         <div className="card-container">
-            {console.log("here", id)}
             <img src={camp.picture} alt="camp"></img>
             <h1>{camp.name}</h1>
             <p>{camp.description}</p>

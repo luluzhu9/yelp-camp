@@ -4,7 +4,8 @@ import './Header.css';
 import {auth} from './firebase.js';
 
 function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, setAddCommentPageIsShown}) {
+    setSingleCampPageIsShown, setAddCommentPageIsShown, setAddCampPageIsShown, campData, 
+    setFilteredCamps, setCurrSearch}) {
         
     function handleCreateAccount (event) {
         setSearchPageIsShown(false);
@@ -19,17 +20,29 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageI
     }
 
     function handleHome(event) {
+        setCurrSearch("");
+        console.log("header", campData);
+        setFilteredCamps(campData);
         setSearchPageIsShown(true);
         setSignUpPageIsShown(false);
         setLoginPageIsShown(false);
         setSingleCampPageIsShown(false);
-        /* TODO: pass in setCurrCamp and set as null here*/
         setAddCommentPageIsShown(false);
+        setAddCampPageIsShown(false);
     }
 
     async function handleLogout (event) {
         await auth.signOut()
-        .then(alert('Signed Out'))
+        .then(value => {
+            alert('Signed Out')
+            setSearchPageIsShown(true);
+            setSignUpPageIsShown(false);
+            setLoginPageIsShown(false);
+            setSingleCampPageIsShown(false);
+            setAddCommentPageIsShown(false);
+            setAddCampPageIsShown(false);
+            setCurrSearch("");
+        })
         .catch(error => console.log(error));
     }
 

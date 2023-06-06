@@ -5,7 +5,8 @@ import YelpCampIcon from './media/Logo.svg';
 import {database} from './firebase.js';
 
 function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, currCamp, currID, setAddCommentPageIsShown}) {
+    setSingleCampPageIsShown, currCamp, currID, setAddCommentPageIsShown, setAddCampPageIsShown, 
+    campData, setFilteredCamps, setCurrSearch}) {
     
     var submission = "";
 
@@ -32,12 +33,15 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
         let currTime = dayjs().year() + '-' + month + '-' + date;
 
         try {
+            /* TODO: I think I need to await this one to make sure it's completely done*/
             database.ref('camps/' + currID + '/reviews/' + newID).set({
                 datePosted: currTime,
                 reviewer: user.email,
                 submission: submission
             })
             alert('success');
+            setAddCommentPageIsShown(false);
+            setSingleCampPageIsShown(true);
         } catch (err) {
             alert(err);
         }
@@ -48,7 +52,8 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
         <div className="comment-page">
             <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
                 user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown}/>
+                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>
             <div className="comment-page-center">
                 <h1>Add New Comment</h1>
                 <p>Description</p>

@@ -39,7 +39,7 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
     function handleComment (event) {
         event.preventDefault();
         /* Calculate new ID based on number of items in reviews object */
-        let newID = currCamp.reviews.length;
+        let newID = currCamp.reviews.length + 1;
 
         let currTime = dayjs();
         currTime = currTime.format();
@@ -47,15 +47,15 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
         try {
             database.ref('camps/' + currID + '/reviews/' + newID).set({
                 datePosted: currTime,
-                reviewer: user.email,
+                reviewer: user.email.split('@')[0],
                 submission: submission
             })
-            alert('success');
+            alert('Success');
             setAddCommentPageIsShown(false);
             setSingleCampPageIsShown(true);
             window.scrollTo(0, 0);
         } catch (err) {
-            alert(err);
+            alert('Add Comment Failed');
         }
 
     }

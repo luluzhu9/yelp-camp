@@ -3,7 +3,6 @@ import './SignUpInPage.css';
 import UserTestimonial from './media/User Testimonial.svg';
 import YelpCampIcon from './media/Logo.svg';
 import {auth} from './firebase.js';
-import platform from './here.js';
 
 function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsShown, 
     setSearchPageIsShown, loginPageIsShown, setLoginPageIsShown, setCurrSearch,

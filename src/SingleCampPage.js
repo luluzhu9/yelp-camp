@@ -60,7 +60,7 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
                     </div>
                     <div className="reviews-container">
                         {/* Map backwards to display chronologically */}
-                        {getReviews().slice(0).reverse().map(review => (
+                        {getReviews().length !== 0 && getReviews().slice(0).reverse().map(review => (
                             <Review review={review}/>
                         ))}
 

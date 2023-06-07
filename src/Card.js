@@ -7,6 +7,7 @@ function Card({camp, setSingleCampPageIsShown, setSearchPageIsShown, setCurrCamp
         setSearchPageIsShown(false);
         setCurrCamp(camp);
         setCurrID(id);
+        window.scrollTo(0, 0);
     }
 
     return(

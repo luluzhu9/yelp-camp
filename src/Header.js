@@ -11,17 +11,24 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageI
         setSearchPageIsShown(false);
         setSignUpPageIsShown(true);
         setLoginPageIsShown(false);
+        setSingleCampPageIsShown(false);
+        setAddCommentPageIsShown(false);
+        setAddCampPageIsShown(false);
+        window.scrollTo(0, 0);
     }
 
     function handleLogin (event) {
         setSearchPageIsShown(false);
         setLoginPageIsShown(true);
         setSignUpPageIsShown(false);
+        setSingleCampPageIsShown(false);
+        setAddCommentPageIsShown(false);
+        setAddCampPageIsShown(false);
+        window.scrollTo(0, 0);
     }
 
     function handleHome(event) {
         setCurrSearch("");
-        console.log("header", campData);
         setFilteredCamps(campData);
         setSearchPageIsShown(true);
         setSignUpPageIsShown(false);
@@ -29,6 +36,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageI
         setSingleCampPageIsShown(false);
         setAddCommentPageIsShown(false);
         setAddCampPageIsShown(false);
+        window.scrollTo(0, 0);
     }
 
     async function handleLogout (event) {
@@ -42,6 +50,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageI
             setAddCommentPageIsShown(false);
             setAddCampPageIsShown(false);
             setCurrSearch("");
+            window.scrollTo(0, 0);
         })
         .catch(error => console.log(error));
     }

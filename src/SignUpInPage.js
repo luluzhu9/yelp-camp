@@ -3,6 +3,7 @@ import './SignUpInPage.css';
 import UserTestimonial from './media/User Testimonial.svg';
 import YelpCampIcon from './media/Logo.svg';
 import {auth} from './firebase.js';
+import platform from './here.js';
 
 function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsShown, 
     setSearchPageIsShown, loginPageIsShown, setLoginPageIsShown, setCurrSearch,
@@ -19,7 +20,7 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
                 setLoginPageIsShown(false);
                 setSingleCampPageIsShown(false);
             })
-            .catch(error => alert(error.message))
+            .catch(error => alert('Login Failed! Invalid Email or Password.'))
         } else {
             await auth.createUserWithEmailAndPassword(email, password)
             .then((result) => {
@@ -28,22 +29,25 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
                 setSignUpPageIsShown(false);
                 setSingleCampPageIsShown(false);
             })
-            .catch(error => alert(error.message))
+            .catch(error => alert('Login Failed! Invalid Email or Password.'))
         }
         setEmail('');
         setPassword('');
+        window.scrollTo(0, 0);
     }
 
     function handleSignIn (event) {
         event.preventDefault();
         setSignUpPageIsShown(false);
         setLoginPageIsShown(true);
+        window.scrollTo(0, 0);
     }
 
     function handleCreateAccount (event) {
         event.preventDefault();
         setSignUpPageIsShown(true);
         setLoginPageIsShown(false);
+        window.scrollTo(0, 0);
     }
 
     function handleBackToCamp (event) {
@@ -53,6 +57,7 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
         setCurrSearch("");
         /* Reset filteredCamps to camps*/
         setFilteredCamps(campData);
+        window.scrollTo(0, 0);
     }
 
     return(

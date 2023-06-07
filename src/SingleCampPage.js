@@ -13,6 +13,7 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
     function handleLeaveReview (event) {
         setAddCommentPageIsShown(true);
         setSingleCampPageIsShown(false);
+        window.scrollTo(0, 0);
     }
 
     function getReviews () {

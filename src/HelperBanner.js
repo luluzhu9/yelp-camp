@@ -7,6 +7,7 @@ function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown, campD
     function handleAddCamp(event) {
         setAddCampPageIsShown(true);
         setSearchPageIsShown(false);
+        window.scrollTo(0, 0);
     }
 
     function filterCamps (event) {
@@ -30,7 +31,6 @@ function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown, campD
                 <form className="search-bar">
                     <i class="icon fa fa-search"></i>
                     <input type="search" onChange={filterCamps} value={currSearch} placeholder="Search for camps"></input>
-                    <button type="submit">Search</button>
                 </form>
                 {user != null && (<p className="add-campground" onClick={handleAddCamp}>Or add your own campground</p>)}
             </div>

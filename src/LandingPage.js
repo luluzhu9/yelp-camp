@@ -10,6 +10,7 @@ function LandingPage({setLandingIsShown, setSearchPageIsShown}) {
     function handleViewCampgrounds(event) {
         setLandingIsShown(false);
         setSearchPageIsShown(true);
+        window.scrollTo(0, 0);
     }
 
     return(

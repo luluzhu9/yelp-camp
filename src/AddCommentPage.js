@@ -15,25 +15,36 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
     dayjs().format();
     dayjs.extend(relativeTime);
 
+    var updateLocale = require('dayjs/plugin/updateLocale')
+    dayjs.extend(updateLocale)
+
+    dayjs.updateLocale('en', {
+        relativeTime: {
+            future: "in %s",
+            past: "%s ago",
+            s: 'a few seconds',
+            m: "a minute",
+            mm: "%d minutes",
+            h: "an hour",
+            hh: "%d hours",
+            d: "a day",
+            dd: "%d days",
+            M: "a month",
+            MM: "%d months",
+            y: "a year",
+            yy: "%d years"
+        }
+    });
+
     function handleComment (event) {
         event.preventDefault();
         /* Calculate new ID based on number of items in reviews object */
         let newID = currCamp.reviews.length;
 
-        /* Get current time and format */
-        let month = dayjs().month() + 1;
-        if (month < 10){
-            month = '0' + month;
-        }
-
-        let date = dayjs().date();
-        if (date < 10){
-            date = '0' + date;
-        }
-        let currTime = dayjs().year() + '-' + month + '-' + date;
+        let currTime = dayjs();
+        currTime = currTime.format();
 
         try {
-            /* TODO: I think I need to await this one to make sure it's completely done*/
             database.ref('camps/' + currID + '/reviews/' + newID).set({
                 datePosted: currTime,
                 reviewer: user.email,
@@ -42,6 +53,7 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
             alert('success');
             setAddCommentPageIsShown(false);
             setSingleCampPageIsShown(true);
+            window.scrollTo(0, 0);
         } catch (err) {
             alert(err);
         }

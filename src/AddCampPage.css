@@ -69,7 +69,7 @@
 
 .add-camp-center form button {
     border: none;
-    outline: none;
+    outline: 0.1vw solid black;
     background: black;
     color: white;
     padding: 1.4vw;
@@ -78,4 +78,10 @@
     font-size: 1.2vw;
     cursor: pointer;
     margin-top: 0.5vw;
+    transition: all 0.3s ease 0s;
+}
+
+.add-camp-center form button:hover {
+    background: white;
+    color: black;
 }

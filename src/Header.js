@@ -1,12 +1,13 @@
-import React from 'react';
-import YelpCampIcon from './media/Logo.svg';
-import './Header.css';
-import {auth} from './firebase.js';
+import React from "react";
+import YelpCampIcon from "./media/Logo.svg";
+import "./Header.css";
+import {auth} from "./firebase.js";
 
-function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, setAddCommentPageIsShown, setAddCampPageIsShown, campData, 
+function Header({setSearchPageIsShown, setSignUpPageIsShown, user,
+    setLoginPageIsShown, setSingleCampPageIsShown,
+    setAddCommentPageIsShown, setAddCampPageIsShown, campData,
     setFilteredCamps, setCurrSearch}) {
-        
+
     function handleCreateAccount (event) {
         setSearchPageIsShown(false);
         setSignUpPageIsShown(true);
@@ -42,7 +43,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageI
     async function handleLogout (event) {
         await auth.signOut()
         .then(value => {
-            alert('Signed Out')
+            alert("Signed Out")
             setSearchPageIsShown(true);
             setSignUpPageIsShown(false);
             setLoginPageIsShown(false);
@@ -67,6 +68,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageI
                 {user != null && (<p className="user-email">{user.email}</p>)}
                 {user != null && (<p className="logout" onClick={handleLogout}>Logout</p>)}
             </div>
+
         </div>
     )
 }

@@ -88,7 +88,7 @@
 
 .leave-review-btn {
     border: none;
-    outline: none;
+    outline: 0.1vw solid black;
     background: black;
     color: white;
     height: 80%;
@@ -102,9 +102,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease 0s;
 }
 
 .leave-review-btn i {
     font-size: 1.75vw;
     margin-right: 0.75vw;
+}
+
+.leave-review-btn:hover {
+    background: white;
+    color: black;
 }

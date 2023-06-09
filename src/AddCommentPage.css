@@ -55,7 +55,7 @@
 
 .comment-form button {
     border: none;
-    outline: none;
+    outline: 0.1vw solid black;
     background: black;
     color: white;
     padding: 1.4vw;
@@ -63,4 +63,10 @@
     font-weight: bold;
     font-size: 1.2vw;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.comment-form button:hover {
+    background: white;
+    color: black;
 }

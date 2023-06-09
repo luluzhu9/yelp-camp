@@ -50,6 +50,7 @@ label, input{
     font-size: 2.5vw;
 }
 
+/* TODO: HERE */
 .user-review {
     font-size: 1.7vw;
     line-height: 2.5vw;
@@ -93,10 +94,12 @@ label, input{
     display: flex;
     flex-direction: row;
     gap: 0.5vw;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
-.arrow-back-to-campgrounds {
-    cursor: pointer;
+.arrow-back-to-campgrounds:hover {
+    color: rgb(201, 174, 128);
 }
 
 .toggle-sign-in-up {
@@ -120,6 +123,12 @@ label, input{
     text-decoration: underline solid rgb(37, 170, 223);  
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.toggle-sign-in-up button:hover {
+    color: rgb(201, 174, 128);
+    text-decoration: underline solid rgb(201, 174, 128);
 }
 
 .sign-up-form {
@@ -150,7 +159,7 @@ label, input{
 
 .create-an-account {
     border: none;
-    outline: none;
+    outline: 0.1vw solid black;
     background: black;
     color: white;
     padding: 1.4vw;
@@ -158,11 +167,17 @@ label, input{
     font-weight: bold;
     font-size: 1.2vw;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.create-an-account:hover {
+    background: white;
+    color: black;
 }
 
 .login {
     border: none;
-    outline: none;
+    outline: 0.1vw solid black;
     background: black;
     color: white;
     padding: 1.4vw;
@@ -170,4 +185,10 @@ label, input{
     font-weight: bold;
     font-size: 1.2vw;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.login:hover {
+    background: white;
+    color: black;
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import YelpCampIcon from './media/Logo.svg';
-import HeroImage from './media/Hero Image.jpg';
-import AirbnbLogo from './media/Airbnb.svg';
-import BookingLogo from './media/Booking.svg';
-import PlumLogo from './media/Plum Guide.svg';
-import './LandingPage.css';
+import React from "react";
+import YelpCampIcon from "./media/Logo.svg";
+import HeroImage from "./media/Hero Image.jpg";
+import AirbnbLogo from "./media/Airbnb.svg";
+import BookingLogo from "./media/Booking.svg";
+import PlumLogo from "./media/Plum Guide.svg";
+import "./LandingPage.css";
 
 function LandingPage({setLandingIsShown, setSearchPageIsShown}) {
     function handleViewCampgrounds(event) {

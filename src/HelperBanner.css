@@ -62,4 +62,9 @@
     text-decoration-line: underline;
     text-decoration-skip-ink: none;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.add-campground:hover {
+    color: rgb(201, 174, 128);
 }

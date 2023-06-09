@@ -1,9 +1,9 @@
-import React from 'react';
-import './Review.css';
+import React from "react";
+import "./Review.css";
 
 function Review ({review}) {
-    const dayjs = require('dayjs');
-    var relativeTime = require('dayjs/plugin/relativeTime');
+    const dayjs = require("dayjs");
+    var relativeTime = require("dayjs/plugin/relativeTime");
     dayjs().format();
     dayjs.extend(relativeTime);
 

@@ -1,12 +1,13 @@
-import React from 'react';
-import './AddCampPage.css';
-import Header from './Header.js';
-import YelpCampIcon from './media/Logo.svg';
-import {database} from './firebase.js';
+import React from "react";
+import "./AddCampPage.css";
+import Header from "./Header.js";
+import YelpCampIcon from "./media/Logo.svg";
+import {database} from "./firebase.js";
 
-function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown, 
-    user, setLoginPageIsShown, setSingleCampPageIsShown, setAddCommentPageIsShown, setAddCampPageIsShown, 
-    campData, setFilteredCamps, setCurrSearch}) {
+function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown,
+    user, setLoginPageIsShown, setSingleCampPageIsShown,
+    setAddCommentPageIsShown, setAddCampPageIsShown, campData,
+    setFilteredCamps, setCurrSearch}) {
 
     var campName = "";
     var price = "";
@@ -17,21 +18,21 @@ function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown,
         event.preventDefault();
 
         /* Format price string */
-        price = price.replace('$', '');
+        price = price.replace("$", "");
 
         /* Chop off mainDescrip at first period for description */
-        let descrip = mainDescrip.split('.')[0];
+        let descrip = mainDescrip.split(".")[0];
 
         /* Calculate new ID based on how many camps there are */
         let newID;
-        const campsRef = database.ref('camps');
-        campsRef.on('value', snapshot => {
+        const campsRef = database.ref("camps");
+        campsRef.on("value", snapshot => {
             newID = Object.keys(snapshot.val()).length + 1;
         })
 
         try {
-            database.ref('camps/' + newID).set({
-                descripBy: user.email.split('@')[0],
+            database.ref("camps/" + newID).set({
+                descripBy: user.email.split("@")[0],
                 description: descrip,
                 mainDescrip: mainDescrip,
                 name: campName,
@@ -39,7 +40,7 @@ function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown,
                 price: price,
                 reviews: ""
             })
-            alert('Success');
+            alert("Success");
             setSearchPageIsShown(true);
             setSingleCampPageIsShown(false);
             setSignUpPageIsShown(false);
@@ -48,16 +49,20 @@ function AddCampPage({setSearchPageIsShown, setSignUpPageIsShown,
             setAddCampPageIsShown(false);
             window.scrollTo(0, 0);
         } catch (err) {
-            alert('Add Campground Failed');
+            alert("Add Campground Failed");
         }
-    } 
+    }
 
     return(
         <div className="add-camp-container">
-            <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
-                campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>
+            <Header setSearchPageIsShown={setSearchPageIsShown}
+                setSignUpPageIsShown={setSignUpPageIsShown}
+                user={user} setLoginPageIsShown={setLoginPageIsShown}
+                setSingleCampPageIsShown={setSingleCampPageIsShown}
+                setAddCommentPageIsShown={setAddCommentPageIsShown}
+                setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps}
+                setCurrSearch={setCurrSearch}/>
             <div className="add-camp-center">
                 <h1>Add New Campground</h1>
                 <form onSubmit={handleSubmitCamp}>

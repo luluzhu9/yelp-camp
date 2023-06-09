@@ -1,8 +1,8 @@
-import React from 'react';
-import './HelperBanner.css';
+import React from "react";
+import "./HelperBanner.css";
 
-function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown, campData, setFilteredCamps, 
-    setCurrSearch, currSearch}){
+function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown,
+    campData, setFilteredCamps, setCurrSearch, currSearch}){
 
     function handleAddCamp(event) {
         setAddCampPageIsShown(true);
@@ -25,7 +25,7 @@ function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown, campD
 
     return(
         <div className="helper-banner-container">
-            <div className="helper-banner-inner">   
+            <div className="helper-banner-inner">
                 <h1>Welcome to YelpCamp!</h1>
                 <p className="info">View our hand-picked campgrounds from all over the world, or add your own.</p>
                 <form className="search-bar">
@@ -39,5 +39,3 @@ function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown, campD
 }
 
 export default HelperBanner;
-
-/* todo: add container with 40% width inside helper-banner-container */

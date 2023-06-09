@@ -1,7 +1,9 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import "./Card.css";
 
-function Card({camp, setSingleCampPageIsShown, setSearchPageIsShown, setCurrCamp, id, setCurrID}) {
+function Card({camp, setSingleCampPageIsShown, setSearchPageIsShown,
+    setCurrCamp, id, setCurrID}) {
+
     function handleViewCamp (event) {
         setSingleCampPageIsShown(true);
         setSearchPageIsShown(false);

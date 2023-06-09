@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {database, auth} from './firebase.js';
-import './App.css';
-import LandingPage from './LandingPage.js';
-import SearchPage from './SearchPage.js';
-import SignUpInPage from './SignUpInPage.js';
-import SingleCampPage from './SingleCampPage.js';
-import AddCommentPage from './AddCommentPage.js';
-import AddCampPage from './AddCampPage.js';
+import React, {useState, useEffect} from "react";
+import {database, auth} from "./firebase.js";
+import "./App.css";
+import LandingPage from "./LandingPage.js";
+import SearchPage from "./SearchPage.js";
+import SignUpInPage from "./SignUpInPage.js";
+import SingleCampPage from "./SingleCampPage.js";
+import AddCommentPage from "./AddCommentPage.js";
+import AddCampPage from "./AddCampPage.js";
 
 function App() {
   const [filteredCamps, setFilteredCamps] = useState([]);
@@ -31,10 +31,10 @@ function App() {
   const [currSearch, setCurrSearch] = useState("");
 
   /* User auth states*/
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  
+
   /* GET data from Firebase Realtime Database */
   useEffect(() => {
         let ref = database.ref("/camps");
@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div className="App">
-      {landingIsShown && (<LandingPage setLandingIsShown={setLandingIsShown} 
+      {landingIsShown && (<LandingPage setLandingIsShown={setLandingIsShown}
         setSearchPageIsShown={setSearchPageIsShown}/>)}
       
       {searchPageIsShown && (<SearchPage filteredCamps={filteredCamps} setSearchPageIsShown={setSearchPageIsShown} 
@@ -91,7 +91,7 @@ function App() {
       {addCampPageIsShown && (<AddCampPage setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
         user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
         setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
-        setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>)}
+        campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>)}
     </div>
   );
 }

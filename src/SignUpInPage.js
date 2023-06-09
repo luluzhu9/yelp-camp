@@ -1,12 +1,13 @@
-import React from 'react';
-import './SignUpInPage.css';
-import UserTestimonial from './media/User Testimonial.svg';
-import YelpCampIcon from './media/Logo.svg';
-import {auth} from './firebase.js';
+import React from "react";
+import "./SignUpInPage.css";
+import UserTestimonial from "./media/User Testimonial.svg";
+import YelpCampIcon from "./media/Logo.svg";
+import {auth} from "./firebase.js";
 
-function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsShown, 
-    setSearchPageIsShown, loginPageIsShown, setLoginPageIsShown, setCurrSearch,
-    campData, setFilteredCamps, setSingleCampPageIsShown}) {
+function SignUpInPage({email, setEmail, password, setPassword,
+    setSignUpPageIsShown, setSearchPageIsShown, loginPageIsShown,
+    setLoginPageIsShown, setCurrSearch,campData, setFilteredCamps,
+    setSingleCampPageIsShown}) {
 
     async function handleSubmit (event) {
         event.preventDefault();
@@ -14,24 +15,24 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
         if(loginPageIsShown) {
             await auth.signInWithEmailAndPassword(email, password)
             .then((result) => {
-                alert('Login Successful!');
+                alert("Login Successful!");
                 setSearchPageIsShown(true);
                 setLoginPageIsShown(false);
                 setSingleCampPageIsShown(false);
             })
-            .catch(error => alert('Login Failed! Invalid Email or Password.'))
+            .catch(error => alert("Login Failed! Invalid Email or Password."))
         } else {
             await auth.createUserWithEmailAndPassword(email, password)
             .then((result) => {
-                alert('Sign Up Successful!')
+                alert("Sign Up Successful!")
                 setSearchPageIsShown(true);
                 setSignUpPageIsShown(false);
                 setSingleCampPageIsShown(false);
             })
-            .catch(error => alert('Login Failed! Invalid Email or Password.'))
+            .catch(error => alert("Login Failed! Invalid Email or Password."))
         }
-        setEmail('');
-        setPassword('');
+        setEmail("");
+        setPassword("");
         window.scrollTo(0, 0);
     }
 
@@ -64,9 +65,9 @@ function SignUpInPage({email, setEmail, password, setPassword, setSignUpPageIsSh
             <div className="sign-up-left">
                 <div className="sign-up-header">
                     <img src={YelpCampIcon} alt="yelp camp icon"/>
-                    <div className="arrow-back-to-campgrounds">  
+                    <div className="arrow-back-to-campgrounds" onClick={handleBackToCamp}>
                         <i class="fa fa-long-arrow-left"></i>
-                        <p onClick={handleBackToCamp}>Back to campgrounds</p>
+                        <p>Back to campgrounds</p>
                     </div>
                 </div>
                 <div className="sign-up-left-center">

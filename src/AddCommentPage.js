@@ -1,28 +1,29 @@
-import React from 'react';
-import './AddCommentPage.css';
-import Header from './Header.js';
-import YelpCampIcon from './media/Logo.svg';
-import {database} from './firebase.js';
+import React from "react";
+import "./AddCommentPage.css";
+import Header from "./Header.js";
+import YelpCampIcon from "./media/Logo.svg";
+import {database} from "./firebase.js";
 
-function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, currCamp, currID, setAddCommentPageIsShown, setAddCampPageIsShown, 
-    campData, setFilteredCamps, setCurrSearch}) {
-    
+function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user,
+    setLoginPageIsShown, setSingleCampPageIsShown, currCamp, currID,
+    setAddCommentPageIsShown, setAddCampPageIsShown, campData,
+    setFilteredCamps, setCurrSearch}) {
+
     var submission = "";
 
-    const dayjs = require('dayjs');
-    var relativeTime = require('dayjs/plugin/relativeTime');
+    const dayjs = require("dayjs");
+    var relativeTime = require("dayjs/plugin/relativeTime");
     dayjs().format();
     dayjs.extend(relativeTime);
 
-    var updateLocale = require('dayjs/plugin/updateLocale')
+    var updateLocale = require("dayjs/plugin/updateLocale")
     dayjs.extend(updateLocale)
 
-    dayjs.updateLocale('en', {
+    dayjs.updateLocale("en", {
         relativeTime: {
             future: "in %s",
             past: "%s ago",
-            s: 'a few seconds',
+            s: "a few seconds",
             m: "a minute",
             mm: "%d minutes",
             h: "an hour",
@@ -45,27 +46,31 @@ function AddCommentPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
         currTime = currTime.format();
 
         try {
-            database.ref('camps/' + currID + '/reviews/' + newID).set({
+            database.ref("camps/" + currID + "/reviews/" + newID).set({
                 datePosted: currTime,
-                reviewer: user.email.split('@')[0],
+                reviewer: user.email.split("@")[0],
                 submission: submission
             })
-            alert('Success');
+            alert("Success");
             setAddCommentPageIsShown(false);
             setSingleCampPageIsShown(true);
             window.scrollTo(0, 0);
         } catch (err) {
-            alert('Add Comment Failed');
+            alert("Add Comment Failed");
         }
 
     }
-    
+
     return(
         <div className="comment-page">
-            <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
-                campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>
+            <Header setSearchPageIsShown={setSearchPageIsShown}
+                setSignUpPageIsShown={setSignUpPageIsShown}
+                user={user} setLoginPageIsShown={setLoginPageIsShown}
+                setSingleCampPageIsShown={setSingleCampPageIsShown}
+                setAddCommentPageIsShown={setAddCommentPageIsShown}
+                setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps}
+                setCurrSearch={setCurrSearch}/>
             <div className="comment-page-center">
                 <h1>Add New Comment</h1>
                 <p>Description</p>

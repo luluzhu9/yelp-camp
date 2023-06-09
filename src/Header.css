@@ -29,6 +29,11 @@
     font-weight: bold;
     color: rgb(77, 77, 77);
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header-left button:hover {
+    color: rgb(201, 174, 128);
 }
 
 .header-right {
@@ -45,11 +50,17 @@
     font-size: 1.25vw;
     color: rgb(77, 77, 77);
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.login-button:hover {
+    color: rgb(201, 174, 128);
 }
 
 .create-account-button {
     border: none;
-    outline: none;
+    /*outline: none;*/
+    outline: 0.1vw solid black;
     background: black;
     color: white;
     height: 80%;
@@ -58,6 +69,13 @@
     font-weight: bold;
     font-size: 1.25vw;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.create-account-button:hover {
+    background: white;
+    color: black;
+    outline: 0.1vw solid black;
 }
 
 .user-email {
@@ -70,4 +88,10 @@
     color: rgb(116, 116, 116);
     font-size: 1.25vw;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
+
+.logout:hover {
+    color: rgb(201, 174, 128);
+}
+

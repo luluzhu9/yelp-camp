@@ -42,6 +42,7 @@
     font-size: 1.3vw;
     border: 0.1vw solid rgb(220, 220, 220);
     cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
 .card-container button:hover {

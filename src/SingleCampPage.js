@@ -1,13 +1,14 @@
-import React from 'react';
-import './SingleCampPage.css';
-import Header from './Header.js';
-import Review from './Review.js';
-import YelpCampIcon from './media/Logo.svg';
-import Map from './media/Map.png';
-import {database} from './firebase.js';
+import React from "react";
+import "./SingleCampPage.css";
+import Header from "./Header.js";
+import Review from "./Review.js";
+import YelpCampIcon from "./media/Logo.svg";
+import Map from "./media/Map.png";
+import {database} from "./firebase.js";
 
-function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setLoginPageIsShown, 
-    setSingleCampPageIsShown, currCamp, setAddCommentPageIsShown, setAddCampPageIsShown, campData, 
+function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown,
+    user, setLoginPageIsShown, setSingleCampPageIsShown, currCamp,
+    setAddCommentPageIsShown, setAddCampPageIsShown, campData,
     setFilteredCamps, setCurrSearch}) {
 
     function handleLeaveReview (event) {
@@ -19,10 +20,10 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
     function getReviews () {
 
         /* Get ID for path*/
-        const campsRef = database.ref('camps');
-        var key; 
+        const campsRef = database.ref("camps");
+        var key;
 
-        campsRef.on('value', snapshot => {
+        campsRef.on("value", snapshot => {
             snapshot.forEach(child => {
                 if(child.val().name === currCamp.name){
                     key = child.key;
@@ -30,10 +31,10 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
             })
         })
 
-        const reviewsRef = database.ref('camps/' + key + '/reviews');
+        const reviewsRef = database.ref("camps/" + key + "/reviews");
         var reviews;
 
-        reviewsRef.on('value', snapshot => {
+        reviewsRef.on("value", snapshot => {
             reviews = snapshot.val();
         })
 
@@ -42,10 +43,14 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown, user, setL
 
     return(
         <div className="single-camp-page-container">
-            <Header setSearchPageIsShown={setSearchPageIsShown} setSignUpPageIsShown={setSignUpPageIsShown}
-                user={user} setLoginPageIsShown={setLoginPageIsShown} setSingleCampPageIsShown={setSingleCampPageIsShown}
-                setAddCommentPageIsShown={setAddCommentPageIsShown} setAddCampPageIsShown={setAddCampPageIsShown}
-                campData={campData} setFilteredCamps={setFilteredCamps} setCurrSearch={setCurrSearch}/>
+            <Header setSearchPageIsShown={setSearchPageIsShown}
+                setSignUpPageIsShown={setSignUpPageIsShown}
+                user={user} setLoginPageIsShown={setLoginPageIsShown}
+                setSingleCampPageIsShown={setSingleCampPageIsShown}
+                setAddCommentPageIsShown={setAddCommentPageIsShown}
+                setAddCampPageIsShown={setAddCampPageIsShown}
+                campData={campData} setFilteredCamps={setFilteredCamps}
+                setCurrSearch={setCurrSearch}/>
             <div className="main-body">
                 <img className="map-image" src={Map} alt="map"></img>
                 <div className="single-camp-column">

@@ -3,11 +3,19 @@
     padding: 0;
 }
 
+.all-header-container {
+    position: relative;
+}
+
+.mobile-header-container {
+    display: none;
+}
+
 .header-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vw;
+    height: 84px;
 }
 
 .header-left {
@@ -18,22 +26,22 @@
 }
 
 .header-left img {
-    width: 8vw;
+    width: 134px;
 }
 
 .header-left button {
     border: none;
     outline: none;
     background: transparent;
-    font-size: 1.25vw;
+    font-size: 21px;
     font-weight: bold;
     color: rgb(77, 77, 77);
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .header-left button:hover {
     color: rgb(201, 174, 128);
+    transition: all 0.3s ease 0s;
 }
 
 .header-right {
@@ -47,51 +55,114 @@
     border: none;
     outline: none;
     background: transparent;
-    font-size: 1.25vw;
+    font-size: 21px;
     color: rgb(77, 77, 77);
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .login-button:hover {
     color: rgb(201, 174, 128);
+    transition: all 0.3s ease 0s;
 }
 
 .create-account-button {
     border: none;
-    /*outline: none;*/
-    outline: 0.1vw solid black;
+    outline: 1.5px solid black;
     background: black;
     color: white;
     height: 80%;
-    padding: 1.4vw;
+    padding: 23px;
     border-radius: 0.3vw;
     font-weight: bold;
-    font-size: 1.25vw;
+    font-size: 21px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .create-account-button:hover {
     background: white;
     color: black;
     outline: 0.1vw solid black;
+    transition: all 0.3s ease 0s;
 }
 
 .user-email {
-    font-size: 1.25vw;
+    font-size: 21px;
     font-weight: bold;
     color: rgb(77, 77, 77);
 }
 
 .logout {
     color: rgb(116, 116, 116);
-    font-size: 1.25vw;
+    font-size: 21px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    
 }
 
 .logout:hover {
     color: rgb(201, 174, 128);
+    transition: all 0.3s ease 0s;
 }
 
+@media screen and (max-width: 1250px) {
+    .header-container{
+        display: none;
+    }
+
+    .mobile-header-container {
+        display: flex;
+        align-items: center;
+        height: 84px;
+    }
+
+    .mobile-header-container img {
+        width: 134px;
+    }
+
+    .mobile-header-container i {
+        margin-left: auto;
+        font-size: 25px;
+        padding: 15px;
+        border-radius: 0.3vw;
+        background-color: rgb(249, 246, 241);
+        cursor: pointer;
+    }
+
+    .mobile-header-container i:hover {
+        color: rgb(249, 246, 241);
+        background-color: black;
+        transition: all 0.3s ease 0s;
+    }
+
+    .drop-down {
+        font-size: 30px;
+        background-color: black;
+        color: white;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        right: 0;
+        position: absolute;
+        top: 68px;
+        font-size: 25px;
+        user-select: none;
+    }
+
+    .drop-down div {
+        padding: 15px 30px 15px 30px;
+        cursor: pointer;
+    }
+
+    .drop-down div:hover {
+        transition: all 0.3s ease 0s;
+        background-color:white;
+        color: black;
+    }
+
+    .drop-down p {
+        font-size: 25px;
+        padding: 15px 30px 15px 30px;
+        color: white;
+        font-weight: bold;
+    }
+}

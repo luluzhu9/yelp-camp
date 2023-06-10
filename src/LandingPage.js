@@ -1,6 +1,7 @@
 import React from "react";
 import YelpCampIcon from "./media/Logo.svg";
 import HeroImage from "./media/Hero Image.jpg";
+import MobileHeroImage from "./media/Hero Image (Tablet and Mobile).jpg";
 import AirbnbLogo from "./media/Airbnb.svg";
 import BookingLogo from "./media/Booking.svg";
 import PlumLogo from "./media/Plum Guide.svg";
@@ -16,7 +17,8 @@ function LandingPage({setLandingIsShown, setSearchPageIsShown}) {
     return(
         <div className="landing-page">
             <div className="landing-page-left">
-                <img src={YelpCampIcon} alt="yelp camp icon"/>
+                <img src={YelpCampIcon} className="landing-yelp-camp-icon" alt="yelp camp icon"/>
+                <img className="mobile-hero-image" src={MobileHeroImage} alt="yelp camp icon"/>
                 <div className="landing-page-left-centered">
                     <h1>Explore the best camps on Earth.</h1>
                     <p>YelpCamp is a curated list of the best camping spots on Earth. Unfiltered and unbiased reviews.</p>
@@ -34,7 +36,7 @@ function LandingPage({setLandingIsShown, setSearchPageIsShown}) {
                     </div>
                 </div>
             </div>
-            <img src={HeroImage} alt="yelp camp icon"/>
+            <img src={HeroImage} className="desktop-hero-image" alt="yelp camp icon"/>
         </div>
     )
 }

@@ -29,7 +29,7 @@
     text-align: left;
     box-sizing:border-box;
     padding: 0vw 10vw 0vw 10vw;
-    gap: 1.2vw;
+    gap: 20px;
 }
 
 .sign-up-left-center {
@@ -47,37 +47,36 @@ label, input{
 }
 
 .sign-up-left-center h1 {
-    font-size: 2.5vw;
+    font-size: 42px;
 }
 
-/* TODO: HERE */
 .user-review {
-    font-size: 1.7vw;
-    line-height: 2.5vw;
+    font-size: 28px;
+    line-height: 42px;
 }
 
 .sign-up-row {
     display: flex;
     flex-direction: row;
-    gap: 1.5vw;
+    gap: 25px;
 }
 
 .sign-up-row img {
-    width: 3vw;
+    width: 50px;
 }
 
 .sign-up-column {
     display: flex;
     flex-direction: column;
-    gap: 0.5vw;
+    gap: 8px;
 }
 
 .sign-up-column h1 {
-    font-size: 1.1vw;
+    font-size: 18px;
 } 
 
 .sign-up-column p {
-    font-size: 1.1vw;
+    font-size: 18px;
 } 
 
 .sign-up-header {
@@ -86,7 +85,7 @@ label, input{
     align-items: center;
     justify-content: space-between;
     padding: 3vw 10vw 0vw 10vw; /* Match this up with middle container */
-    font-size: 1.2vw;
+    font-size: 20px;
     color: rgb(125, 125, 125);
 }
 
@@ -95,11 +94,11 @@ label, input{
     flex-direction: row;
     gap: 0.5vw;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .arrow-back-to-campgrounds:hover {
     color: rgb(201, 174, 128);
+    transition: all 0.3s ease 0s;
 }
 
 .toggle-sign-in-up {
@@ -110,7 +109,7 @@ label, input{
 
 .toggle-sign-in-up p {
     color: rgb(89, 89, 89);
-    font-size: 1.1vw;
+    font-size: 18px;
 }
 
 .toggle-sign-in-up button {
@@ -118,17 +117,17 @@ label, input{
     outline: none;
     background-color: transparent;
     cursor: pointer;
-    font-size: 1.1vw;
+    font-size: 18px;
     color: rgb(37, 170, 223);
     text-decoration: underline solid rgb(37, 170, 223);  
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .toggle-sign-in-up button:hover {
     color: rgb(201, 174, 128);
     text-decoration: underline solid rgb(201, 174, 128);
+    transition: all 0.3s ease 0s;
 }
 
 .sign-up-form {
@@ -142,9 +141,9 @@ label, input{
     outline: none;
     background: rgb(247, 247, 247);
     color: rgb(183, 183, 183);
-    padding: 1.4vw;
+    padding: 23px;
     border-radius: 0.3vw;
-    font-size: 1.2vw;
+    font-size: 20px;
 }
 
 .email-field::placeholder, .password-field::placeholder {
@@ -154,7 +153,7 @@ label, input{
 
 .sign-up-form label {
     color: rgb(89, 89, 89);
-    font-size: 1.1vw;
+    font-size: 18px;
 }
 
 .create-an-account {
@@ -162,17 +161,17 @@ label, input{
     outline: 0.1vw solid black;
     background: black;
     color: white;
-    padding: 1.4vw;
+    padding: 23px;
     border-radius: 0.3vw;
     font-weight: bold;
-    font-size: 1.2vw;
+    font-size: 20px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .create-an-account:hover {
     background: white;
     color: black;
+    transition: all 0.3s ease 0s;
 }
 
 .login {
@@ -180,15 +179,25 @@ label, input{
     outline: 0.1vw solid black;
     background: black;
     color: white;
-    padding: 1.4vw;
+    padding: 23px;
     border-radius: 0.3vw;
     font-weight: bold;
-    font-size: 1.2vw;
+    font-size: 20px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .login:hover {
     background: white;
     color: black;
+    transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 1164px) {
+    .sign-up-page-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+    }
 }

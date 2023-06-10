@@ -113,4 +113,5 @@
 .leave-review-btn:hover {
     background: white;
     color: black;
+    transition: all 0.3s ease 0s;
 }

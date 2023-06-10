@@ -6,7 +6,7 @@
 
 h1 {
     font-weight: 600; 
-    font-size: 3.5vw;
+    font-size: 59px;
 }
 
 .landing-page {
@@ -16,6 +16,10 @@ h1 {
     width: 100vw;
 }
 
+.mobile-hero-image {
+    display: none;
+}
+
 .landing-page-left {
     display: flex;
     flex: 40%;
@@ -23,10 +27,11 @@ h1 {
     flex-direction: column;
 }
 
-.landing-page-left img {
-    width: 10vw;
+.landing-yelp-camp-icon {
+    width: 134px;
     padding-left: 12vw; /* matches with 1 */
-    padding-top: 2vw;
+    padding-top: 33px;
+    /* Can't figure out how to include padding-bottom without creating white space at bottom */
 }
 
 .landing-page-left-centered {
@@ -39,9 +44,9 @@ h1 {
 
 .landing-page-left-centered p {
     margin-top: 1vw;
-    font-size: 1.2vw;
-    line-height: 2vw;
-    color: rgb(102, 99, 94)
+    font-size: 20px;
+    line-height: 33px;
+    color: rgb(102, 99, 94);
 }
 
 .landing-page-left-centered button {
@@ -50,18 +55,18 @@ h1 {
     background: black;
     color: white;
     font-weight: 600;
-    font-size: 1.2vw;
-    padding: 1.3vw;
+    font-size: 20px;
+    padding: 21px;
     border-radius: 0.25vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .landing-page-left-centered button:hover {
     background: white;
     color: black;
+    transition: all 0.3s ease 0s;
 }
 
 .landing-page-list {
@@ -70,20 +75,21 @@ h1 {
     flex-direction: column;
     gap: 1vw;
     padding-top: 1vw;
-    padding-bottom: 1vw;
+    /* Removed to get rid of extra white space at bottom */
+    /*padding-bottom: 1vw;*/
 }
 
 .landing-page-list li {
     display: flex;
     flex-direction: row;
-    font-size: 1.2vw;
+    font-size: 20px;
     color: rgb(102, 99, 94)
 }
 
 .landing-page-list li:before {
     content: '';
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 25px;
+    height: 25px;
     background-image: url(media/Checkmark.svg);
     background-size: cover;
     background-position: center;
@@ -98,6 +104,45 @@ h1 {
 }
 
 .sponsor-gallery img {
-    width: 7vw;
+    width: 117px;
     padding: 0;
+}
+
+@media screen and (max-width: 1230px){
+    .landing-page {
+        display: flex;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column; 
+    }
+ 
+    .landing-page-left {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(249, 246, 241);
+        flex-direction: column;
+    }
+
+    .desktop-hero-image {
+        display: none;
+    }
+
+    .mobile-hero-image {
+        display: flex;
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+        /* Removed to get rid of white space at bottom*/
+        /*padding-top: 33px;*/
+    }
+
+    .landing-page-left-centered {
+        padding-left: 5vw; 
+        padding-right: 5vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: left; 
+    }
 }

@@ -3,38 +3,38 @@
     border-radius: 0.5vw;
     display: flex;
     padding: 5vw;
-    margin: 2vw 0vw 2vw 0vw;
+    margin: 33px 0vw 33px 0vw;
 }
 
 .helper-banner-inner {
     display: flex;
-    width: 40%;
+    flex: 0 0 40%;
     align-items: flex-start;
     flex-direction: column;
-    gap: 0.85vw;
+    gap: 14px;
     text-align: left;
 }
 
 .helper-banner-inner h1 {
-    font-size: 2.5vw;
+    font-size: 42px;
     font-weight: bold;
 }
 
 .info {
     color: rgb(104, 101, 96);
-    font-size: 1.2vw;
-    line-height: 1.75vw;
+    font-size: 20px;
+    line-height: 29px;
 }
 
 .search-bar {
     display: flex;
-    gap: 1vw;
+    gap: 17px;
     position: relative;
 }
 
 .search-bar input {
-    padding: 1vw 1vw 1vw 3.5vw;
-    font-size: 1.2vw;
+    padding: 17px 17px 17px 59px;
+    font-size: 20px;
     opacity: 1;
     color: rgb(91, 91, 91);
     border-radius: 0.3vw;
@@ -49,7 +49,7 @@
 
 .search-bar i {
     color: #585858;
-    font-size: 1.2vw;
+    font-size: 20px;
     position: absolute;
     top: 48%;
     transform: translateY(-50%);
@@ -58,13 +58,35 @@
 
 .add-campground {
     color: rgb(104, 101, 96);
-    font-size: 1.2vw;
+    font-size: 20px;
     text-decoration-line: underline;
     text-decoration-skip-ink: none;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
 .add-campground:hover {
     color: rgb(201, 174, 128);
+    transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 1538px) {
+    .helper-banner-inner {
+        display: flex;
+        flex: 0 0 70%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.85vw;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .helper-banner-inner {
+        display: flex;
+        flex: 0 0 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.85vw;
+        text-align: left;
+    }
 }

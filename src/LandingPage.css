@@ -123,6 +123,7 @@ h1 {
         height: 100%;
         background-color: rgb(249, 246, 241);
         flex-direction: column;
+        flex: 1 0 40%;
     }
 
     .desktop-hero-image {
@@ -136,6 +137,8 @@ h1 {
         object-fit: cover;
         /* Removed to get rid of white space at bottom*/
         /*padding-top: 33px;*/
+        /*margin-bottom: 1vw;*/
+        margin: 2vw 0vw 2vw 0vw;
     }
 
     .landing-page-left-centered {

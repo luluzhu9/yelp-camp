@@ -28,7 +28,7 @@
     flex-direction: column;
     text-align: left;
     box-sizing:border-box;
-    padding: 0vw 10vw 0vw 10vw;
+    padding: 10vw 10vw 10vw 10vw;
     gap: 20px;
 }
 
@@ -39,7 +39,7 @@
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    gap: 2.5vw;
+    gap: 42px;
 }
 
 label, input{
@@ -84,7 +84,7 @@ label, input{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 3vw 10vw 0vw 10vw; /* Match this up with middle container */
+    padding: 50px 10vw 0vw 10vw; /* Match this up with middle container */
     font-size: 20px;
     color: rgb(125, 125, 125);
 }
@@ -133,7 +133,7 @@ label, input{
 .sign-up-form {
     display: flex;
     flex-direction: column;
-    gap: 1.4vw;
+    gap: 23px;
 }
 
 .email-field, .password-field {

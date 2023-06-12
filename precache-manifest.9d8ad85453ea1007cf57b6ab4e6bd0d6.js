@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "46f2b00710122ec2a0f3",
-    "url": "/yelp-camp/static/css/main.cdeb1cd7.chunk.css"
+    "revision": "ee2196aa5047ec09dbef",
+    "url": "/yelp-camp/static/css/main.7a3ac0cc.chunk.css"
   },
   {
-    "revision": "46f2b00710122ec2a0f3",
-    "url": "/yelp-camp/static/js/main.46f2b007.chunk.js"
+    "revision": "ee2196aa5047ec09dbef",
+    "url": "/yelp-camp/static/js/main.ee2196aa.chunk.js"
   },
   {
-    "revision": "00760a4a3bb287569c96",
-    "url": "/yelp-camp/static/js/1.00760a4a.chunk.js"
+    "revision": "97a49fa2ee49f377ca96",
+    "url": "/yelp-camp/static/js/1.97a49fa2.chunk.js"
   },
   {
     "revision": "2d8d423118f4917c38e8",
@@ -20,8 +20,16 @@ self.__precacheManifest = [
     "url": "/yelp-camp/static/media/Logo.7fc77105.svg"
   },
   {
+    "revision": "c42a3305d36254877e6e19e97c219f12",
+    "url": "/yelp-camp/static/media/Map.c42a3305.png"
+  },
+  {
     "revision": "6cf35507eed5d7b6a314946ea66fdb96",
     "url": "/yelp-camp/static/media/Hero Image.6cf35507.jpg"
+  },
+  {
+    "revision": "ec8e56b08540532d8ba4c1b9496cb123",
+    "url": "/yelp-camp/static/media/Hero Image (Tablet and Mobile).ec8e56b0.jpg"
   },
   {
     "revision": "db9a35268465ef13e0d6425ec909b7cf",
@@ -40,15 +48,11 @@ self.__precacheManifest = [
     "url": "/yelp-camp/static/media/User Testimonial.6bf0ff06.svg"
   },
   {
-    "revision": "c42a3305d36254877e6e19e97c219f12",
-    "url": "/yelp-camp/static/media/Map.c42a3305.png"
-  },
-  {
     "revision": "51d80222ab151abf8a0a1b755e6aa118",
     "url": "/yelp-camp/static/media/Checkmark.51d80222.svg"
   },
   {
-    "revision": "98c13bb838824cf0ab32f75f5d0d949d",
+    "revision": "ddf7ee118a3fbb078e565921247ec1b8",
     "url": "/yelp-camp/index.html"
   }
 ];

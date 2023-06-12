@@ -66,7 +66,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user,
         <div className="all-header-container">
             <div className="header-container">
                 <div className="header-left">
-                    <img src={YelpCampIcon} alt="yelp camp icon"/>
+                    <img onClick={handleHome} src={YelpCampIcon} alt="yelp camp icon"/>
                     <button onClick={handleHome}>Home</button>
                 </div>
                 <div className="header-right">
@@ -77,7 +77,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user,
                 </div>
             </div>
             {<div className="mobile-header-container">
-                <img src={YelpCampIcon} alt="yelp camp icon"/>
+                <img src={YelpCampIcon} onClick={handleHome} alt="yelp camp icon"/>
                 {dropDownIsShown !== true && (
                     <i class="fa fa-bars" onClick={toggleSideBar}aria-hidden="true"></i>
                 )}
@@ -85,7 +85,6 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user,
                     <i class="fa fa-times" style={{fontSize: 28}} onClick={toggleSideBar} aria-hidden="true"></i>
                 )}
                 
-                {/*<i class="fa fa-bars" onClick={toggleSideBar}aria-hidden="true"></i>*/}
                 {dropDownIsShown &&  (
                     <div className="drop-down">
                         {user == null && (<div onClick={handleHome}>Home</div>)}

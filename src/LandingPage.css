@@ -4,7 +4,7 @@
     font-family: 'Archivo', sans-serif;
 }
 
-h1 {
+.landing-page-left-centered h1 {
     font-weight: 600; 
     font-size: 59px;
 }
@@ -149,5 +149,71 @@ h1 {
         width: 100%;
         object-fit: cover;
         margin: 33px 0vw 33px 0vw;
+    }
+}
+
+@media screen and (max-width: 419px) {
+    .landing-page-left-centered h1 {
+        font-weight: 600; 
+        font-size: 9vw;
+    }
+
+    .landing-page-left-centered p {
+        margin-top: 2vw;
+        font-size: 4.5vw;
+        line-height: 6.5vw;
+        color: rgb(102, 99, 94);
+    }
+    
+    .landing-page-left-centered button {
+        border: none;
+        outline: 0.1vw solid black;
+        background: black;
+        color: white;
+        font-weight: 600;
+        font-size: 4.5vw;
+        padding: 6vw;
+        border-radius: 1vw;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        cursor: pointer;
+    }
+
+    .landing-page-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+        padding-top: 4.5vw;
+    }
+    
+    .landing-page-list li {
+        display: flex;
+        flex-direction: row;
+        font-size: 4.5vw;
+        color: rgb(102, 99, 94)
+    }
+
+    .landing-page-list li:before {
+        content: '';
+        width: 5.5vw;
+        height: 5.5vw;
+        background-image: url(media/Checkmark.svg);
+        background-size: cover;
+        background-position: center;
+        display: block;
+        margin-right: 2vw;
+    }
+
+    .sponsor-gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 6vw;
+    }
+    
+    .sponsor-gallery img {
+        width: 25vw;
+        padding: 0;
     }
 }

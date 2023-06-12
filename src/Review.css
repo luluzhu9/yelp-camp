@@ -34,3 +34,29 @@
     font-size: 20px;
     color: rgb(93, 93, 93);
 }
+
+@media screen and (max-width: 419px) {
+    .review-container {
+        border-bottom: 0.1vw solid rgb(220, 220, 220);
+        padding-bottom: 4vw;
+        padding-top: 0.5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 4.5vw;
+    }
+
+    .review-container-row h1 {
+        font-size: 4.5vw;
+    }
+    
+    .review-container-row p {
+        color: rgb(93, 93, 93);
+        font-size: 4vw;
+    }
+    
+    .review-submission {
+        line-height: 7vw;
+        font-size: 4.5vw;
+        color: rgb(93, 93, 93);
+    }
+}

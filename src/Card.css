@@ -7,36 +7,28 @@
 .card-container {
     display: flex;
     flex-direction: column;
-    /*width: 29%;*/
     width: 400px;
     height: auto;
-    /*border: 0.1vw solid rgb(220, 220, 220);*/
     border: 1.5px solid rgb(220, 220, 220);
     border-radius: 0.3vw;
-    /*padding: 1vw;*/
     padding: 16px;
     text-align: left;
-    /*gap: 1vw;*/
     gap: 16px;
 }
 
 .card-container img {
-    /*max-height: 14vw;*/
     max-height: 235px;
     object-fit: cover;
     border-radius: 0.4vw;
 }
 
 .card-container h1 {
-    /*font-size: 1.3vw;*/
     font-size: 22px;
     font-weight: bold;
 }
 
 .card-container p {
-    /*font-size: 1.3vw;*/
     font-size: 22px;
-    /*line-height: 1.9vw;*/
     line-height: 33px;
     color: rgb(91, 91, 91);
 }
@@ -44,11 +36,9 @@
 .card-container button {
     background: white;
     color: black;
-    /*padding: 1.2vw;*/
     padding: 20px;
     border-radius: 0.3vw;
     font-weight: bold;
-    /*font-size: 1.3vw;*/
     font-size: 22px;
     border: 0.1vw solid rgb(220, 220, 220);
     cursor: pointer;
@@ -59,4 +49,47 @@
     color: white;
     border: 0.1vw solid black;
     transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 419px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        height: auto;
+        border: 1.5px solid rgb(220, 220, 220);
+        border-radius: 0.3vw;
+        padding: 16px;
+        text-align: left;
+        gap: 4vw;
+    }
+
+    .card-container img {
+        max-height: 40vw;
+        width: auto;
+        object-fit: cover;
+        border-radius: 1vw;
+    }
+
+    .card-container h1 {
+        font-size: 5vw;
+        font-weight: bold;
+    }
+
+    .card-container p {
+        font-size: 5vw;
+        line-height: 7.5vw;
+        color: rgb(91, 91, 91);
+    }
+
+    .card-container button {
+        background: white;
+        color: black;
+        padding: 5vw;
+        border-radius: 1vw;
+        font-weight: bold;
+        font-size: 5vw;
+        border: 0.1vw solid rgb(220, 220, 220);
+        cursor: pointer;
+    }
 }

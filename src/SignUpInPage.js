@@ -9,6 +9,16 @@ function SignUpInPage({email, setEmail, password, setPassword,
     setLoginPageIsShown, setCurrSearch,campData, setFilteredCamps,
     setSingleCampPageIsShown}) {
 
+    function handleHome(event) {
+        setCurrSearch("");
+        setFilteredCamps(campData);
+        setSearchPageIsShown(true);
+        setSignUpPageIsShown(false);
+        setLoginPageIsShown(false);
+        setSingleCampPageIsShown(false);
+        window.scrollTo(0, 0);
+    }
+
     async function handleSubmit (event) {
         event.preventDefault();
 
@@ -64,7 +74,7 @@ function SignUpInPage({email, setEmail, password, setPassword,
         <div className="sign-up-page-container">
             <div className="sign-up-left">
                 <div className="sign-up-header">
-                    <img src={YelpCampIcon} alt="yelp camp icon"/>
+                    <img src={YelpCampIcon} onClick={handleHome} alt="yelp camp icon"/>
                     <div className="arrow-back-to-campgrounds" onClick={handleBackToCamp}>
                         <i class="fa fa-long-arrow-left"></i>
                         <p>Back to campgrounds</p>
@@ -74,7 +84,7 @@ function SignUpInPage({email, setEmail, password, setPassword,
                     <h1>Start exploring camps from all around the world.</h1>
                     {/* Sign up/login form */}
                     <form className="sign-up-form" onSubmit={handleSubmit}>
-                        <label for="email">Username</label>
+                        <label for="email">Email</label>
                         <input type="text" className="email-field"placeholder="johndoe_91" name="email" value={email} required onChange={(e) => setEmail(e.target.value)}/>
                         <label for="password">Password</label>
                         <input type="password" className="password-field" placeholder="Choose Password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)}/>

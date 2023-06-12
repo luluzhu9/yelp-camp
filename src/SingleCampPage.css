@@ -163,3 +163,98 @@
         transition: all 0.3s ease 0s;
     }
 }
+
+@media screen and (max-width: 419px) {
+    .single-camp-page-container {
+        padding: 1.5vw 5vw 5vw 5vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-descrip {
+        border: solid 0.1vw rgb(220, 220, 220);
+        padding: 7vw;
+        border-radius: 1vw;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 4vw;
+    }
+
+    .camp-image {
+        width: 100%;
+        border-radius: 1vw;
+        object-fit: cover;
+    }
+
+    .main-descrip-row h1 {
+        font-size: 6vw;
+    }
+    
+    .main-descrip-row p {
+        font-size: 4.5vw;
+    }
+    
+    .long-descrip {
+        font-size: 4.5vw;
+        line-height: 7vw;
+        color: rgb(93, 93, 93);
+    }
+    
+    .submitted-by {
+        font-size: 4.5vw;
+        font-style: italic;
+        color: rgb(93, 93, 93);
+    }
+
+    .reviews-container {
+        border: solid 0.1vw rgb(220, 220, 220);
+        padding: 7vw;
+        border-radius: 1vw;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 4.5vw;
+    }
+
+    .leave-review-btn {
+        border: none;
+        outline: 0.1vw solid black;
+        background: black;
+        color: white;
+        height: 60%;
+        padding: 5vw;
+        border-radius: 1vw;
+        font-weight: bold;
+        font-size: 4.5vw;
+        cursor: pointer;
+        width: 58vw;
+        margin: 1vw auto 0.25vw 0vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease 0s;
+    }
+
+    .leave-review-btn i {
+        font-size: 7vw;
+        margin-right: 3vw;
+    }
+
+    .tablet-map-image {
+        display: flex;
+        padding: 7vw;
+        border: solid 0.1vw rgb(220, 220, 220);
+        border-radius: 0.35vw;
+        object-fit: cover;
+        height: 100vw;
+        width: auto;
+        object-position: top;
+    }
+
+    .yelp-camp-icon {
+        margin-top: 7vw;
+        margin-bottom: 7vw;
+        width: 28vw;
+    }
+}

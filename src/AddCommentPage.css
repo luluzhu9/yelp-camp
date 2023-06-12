@@ -96,3 +96,56 @@
         padding-bottom: 84px;
     }
 }
+
+@media screen and (max-width: 469px) {
+    .comment-page {
+        padding: 1.5vw 5vw 5vw 5vw;
+    }
+
+    .comment-page-center {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: 8vw;
+        padding-bottom: 8vw;
+    }
+
+    .comment-page-center h1 {
+        font-size: 8.5vw;
+    }
+    
+    .comment-page-center p {
+        font-size: 4.5vw;
+        margin-top: 8vw;
+        color: rgb(89, 89, 89);
+    }
+
+    .comment-form textarea {
+        margin-top: 6vw;
+        margin-bottom: 6vw;
+        height: 50vw;
+        resize: none;
+        border: none;
+        background-color: rgb(247, 247, 247);
+        border-radius: 1vw;
+        padding: 5vw;
+        font-size: 4.5vw;
+        line-height: 7vw;
+        color: rgb(165, 165, 165);
+    }
+
+    .comment-form button {
+        border: none;
+        outline: 0.1vw solid black;
+        background: black;
+        color: white;
+        padding: 5.5vw;
+        border-radius: 1vw;
+        font-weight: bold;
+        font-size: 4.5vw;
+        cursor: pointer;
+    }
+}

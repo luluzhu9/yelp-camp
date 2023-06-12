@@ -30,7 +30,7 @@ function HelperBanner ({user, setAddCampPageIsShown, setSearchPageIsShown,
                 <p className="info">View our hand-picked campgrounds from all over the world, or add your own.</p>
                 <form className="search-bar">
                     <i class="icon fa fa-search"></i>
-                    <input type="search" onChange={filterCamps} value={currSearch} placeholder="Search for camps"></input>
+                    <input type="text" onChange={filterCamps} value={currSearch} placeholder="Search for camps"></input>
                 </form>
                 {user != null && (<p className="add-campground" onClick={handleAddCamp}>Or add your own campground</p>)}
             </div>

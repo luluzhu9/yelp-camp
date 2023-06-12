@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "4ddfe5569c83aefcb3dc",
-    "url": "/yelp-camp/static/css/main.97688c9d.chunk.css"
+    "revision": "2f85a3992fb084e1988a",
+    "url": "/yelp-camp/static/css/main.a18c0533.chunk.css"
   },
   {
-    "revision": "4ddfe5569c83aefcb3dc",
-    "url": "/yelp-camp/static/js/main.4ddfe556.chunk.js"
+    "revision": "2f85a3992fb084e1988a",
+    "url": "/yelp-camp/static/js/main.2f85a399.chunk.js"
   },
   {
     "revision": "97a49fa2ee49f377ca96",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/yelp-camp/static/media/Checkmark.51d80222.svg"
   },
   {
-    "revision": "b1fa56d3ed19936a0f484b47d94e3ca8",
+    "revision": "20b3b38b41ed68a46ed4e0e3c39d5230",
     "url": "/yelp-camp/index.html"
   }
 ];

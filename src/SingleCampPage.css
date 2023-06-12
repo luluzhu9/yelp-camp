@@ -137,7 +137,7 @@
         display: flex;
         padding: 50px;
         border: solid 0.1vw rgb(220, 220, 220);
-        border-radius: 0.35vw;
+        border-radius: 1vw;
         object-fit: cover;
         height: 50vw;
         width: auto;
@@ -151,7 +151,7 @@
         color: white;
         height: 80%;
         padding: 23px;
-        border-radius: 0.3vw;
+        border-radius: 1vw;
         font-weight: bold;
         font-size: 21px;
         cursor: pointer;
@@ -238,14 +238,14 @@
 
     .leave-review-btn i {
         font-size: 7vw;
-        margin-right: 3vw;
+        margin-right: 10vw;
     }
 
     .tablet-map-image {
         display: flex;
         padding: 7vw;
         border: solid 0.1vw rgb(220, 220, 220);
-        border-radius: 0.35vw;
+        border-radius: 1vw;
         object-fit: cover;
         height: 100vw;
         width: auto;

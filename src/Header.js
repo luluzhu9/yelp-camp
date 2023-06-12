@@ -82,7 +82,7 @@ function Header({setSearchPageIsShown, setSignUpPageIsShown, user,
                     <i class="fa fa-bars" onClick={toggleSideBar}aria-hidden="true"></i>
                 )}
                 {dropDownIsShown === true && (
-                    <i class="fa fa-times" style={{fontSize: 28}} onClick={toggleSideBar} aria-hidden="true"></i>
+                    <i class="fa fa-times" style={{fontSize: 28, backgroundColor: "black", color: "white"}} onClick={toggleSideBar} aria-hidden="true"></i>
                 )}
                 
                 {dropDownIsShown &&  (

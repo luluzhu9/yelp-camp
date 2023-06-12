@@ -7,39 +7,39 @@
 .card-container {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 23.8vw;
     height: auto;
-    border: 1.5px solid rgb(220, 220, 220);
+    border: .1vw solid rgb(220, 220, 220);
     border-radius: 0.3vw;
-    padding: 16px;
+    padding: 1vw;
     text-align: left;
-    gap: 16px;
+    gap: 1vw;
 }
 
 .card-container img {
-    max-height: 235px;
+    max-height: 14vw;
     object-fit: cover;
     border-radius: 0.4vw;
 }
 
 .card-container h1 {
-    font-size: 22px;
+    font-size: 1.3vw;
     font-weight: bold;
 }
 
 .card-container p {
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 1.3vw;
+    line-height: 2vw;
     color: rgb(91, 91, 91);
 }
 
 .card-container button {
     background: white;
     color: black;
-    padding: 20px;
+    padding: 1.2vw;
     border-radius: 0.3vw;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.3vw;
     border: 0.1vw solid rgb(220, 220, 220);
     cursor: pointer;
 }
@@ -49,6 +49,55 @@
     color: white;
     border: 0.1vw solid black;
     transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 1250px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: auto;
+        border: 1.5px solid rgb(220, 220, 220);
+        border-radius: 1vw;
+        padding: 16px;
+        text-align: left;
+        gap: 16px;
+    }
+    
+    .card-container img {
+        max-height: 235px;
+        object-fit: cover;
+        border-radius: 1vw;
+    }
+    
+    .card-container h1 {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    
+    .card-container p {
+        font-size: 22px;
+        line-height: 33px;
+        color: rgb(91, 91, 91);
+    }
+    
+    .card-container button {
+        background: white;
+        color: black;
+        padding: 20px;
+        border-radius: 1vw;
+        font-weight: bold;
+        font-size: 22px;
+        border: 0.1vw solid rgb(220, 220, 220);
+        cursor: pointer;
+    }
+    
+    .card-container button:hover {
+        background: black;
+        color: white;
+        border: 0.1vw solid black;
+        transition: all 0.3s ease 0s;
+    }
 }
 
 @media screen and (max-width: 419px) {

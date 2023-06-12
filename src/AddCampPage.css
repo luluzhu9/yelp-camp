@@ -146,29 +146,33 @@
         line-height: 7vw;
         color: rgb(165, 165, 165);
     }
-}
 
-.add-camp-center form textarea {
-    height: 65vw;
-    resize: none;
-    border: none;
-    background-color: rgb(247, 247, 247);
-    border-radius: 1vw;
-    padding: 5vw;
-    font-size: 4.5vw;
-    line-height: 7vw;
-    color: rgb(165, 165, 165);
-}
+    .add-camp-center form textarea {
+        height: 65vw;
+        resize: none;
+        border: none;
+        background-color: rgb(247, 247, 247);
+        border-radius: 1vw;
+        padding: 5vw;
+        font-size: 4.5vw;
+        line-height: 7vw;
+        color: rgb(165, 165, 165);
+    }
+    
+    .add-camp-center form button {
+        border: none;
+        outline: 0.1vw solid black;
+        background: black;
+        color: white;
+        padding: 5.5vw;
+        border-radius: 1vw;
+        font-weight: bold;
+        font-size: 4.5vw;
+        cursor: pointer;
+        margin-top: 2vw;
+    }
 
-.add-camp-center form button {
-    border: none;
-    outline: 0.1vw solid black;
-    background: black;
-    color: white;
-    padding: 5.5vw;
-    border-radius: 1vw;
-    font-weight: bold;
-    font-size: 4.5vw;
-    cursor: pointer;
-    margin-top: 2vw;
+    .yelp-camp-icon{
+        width: 28vw;
+    }
 }

@@ -27,6 +27,7 @@
 
 .header-left img {
     width: 134px;
+    cursor: pointer;
 }
 
 .header-left button {
@@ -116,6 +117,7 @@
 
     .mobile-header-container img {
         width: 134px;
+        cursor: pointer;
     }
 
     .mobile-header-container i {
@@ -143,7 +145,7 @@
         text-align: right;
         right: 0;
         position: absolute;
-        top: 68px;
+        top: 62px;
         font-size: 25px;
         user-select: none;
     }
@@ -171,6 +173,7 @@
 
     .mobile-header-container img {
         width: 28vw;
+        cursor: pointer;
     }
 
     .mobile-header-container i {
@@ -191,7 +194,7 @@
         text-align: right;
         right: 0;
         position: absolute;
-        top: 68px;
+        top: 62px;
         font-size: 6vw;
         user-select: none;
     }

@@ -90,6 +90,10 @@ label, input{
     color: rgb(125, 125, 125);
 }
 
+.sign-up-header img {
+    cursor: pointer;
+}
+
 .arrow-back-to-campgrounds {
     display: flex;
     flex-direction: row;
@@ -237,6 +241,7 @@ label, input{
 
     .sign-up-header img {
         width: 25vw;
+        cursor: pointer;
     }
 
     .arrow-back-to-campgrounds {

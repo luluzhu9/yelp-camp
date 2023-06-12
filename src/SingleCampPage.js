@@ -76,6 +76,7 @@ function SingleCampPage ({setSearchPageIsShown, setSignUpPageIsShown,
                         )}
                     </div>
                 </div>
+                <img className="tablet-map-image" src={Map} alt="map"></img>
             </div>
             <img className="yelp-camp-icon" src={YelpCampIcon} alt="yelp camp icon"/>
         </div>

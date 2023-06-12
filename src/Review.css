@@ -10,7 +10,7 @@
     padding-top: 0.5vw;
     display: flex;
     flex-direction: column;
-    gap: 1vw;
+    gap: 17px;
 }
 
 .review-container-row {
@@ -21,16 +21,16 @@
 }
 
 .review-container-row h1 {
-    font-size: 1.3vw;
+    font-size: 22px;
 }
 
 .review-container-row p {
     color: rgb(93, 93, 93);
-    font-size: 1.1vw;
+    font-size: 18px;
 }
 
 .review-submission {
-    line-height: 1.75vw;
-    font-size: 1.2vw;
+    line-height: 29px;
+    font-size: 20px;
     color: rgb(93, 93, 93);
 }

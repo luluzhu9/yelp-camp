@@ -9,10 +9,8 @@
 }
 
 .add-camp-center {
-    /*display: flex;
-    flex-direction: column;*/
     text-align: left;
-    width: 37vw;
+    width: 621px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 5vw;
@@ -22,27 +20,27 @@
 .add-camp-center form {
     display: flex;
     flex-direction: column;
-    margin-top: 2vw;
-    gap: 1vw;
+    margin-top: 33px;
+    gap: 17px;
 }
 
 .add-camp-center h1 {
-    font-size: 2.5vw;
+    font-size: 42px;
 }
 
 .add-camp-center form label {
-    font-size: 1.25vw;
+    font-size: 21px;
     color: rgb(89, 89, 89);
-    margin-top: 0.5vw;
+    margin-top: 8px;
 }
 
 .add-camp-center form input {
     border: none;
     background-color: rgb(247, 247, 247);
     border-radius: 0.3vw;
-    padding: 1.5vw;
-    font-size: 1.2vw;
-    line-height: 1.75vw;
+    padding: 25px;
+    font-size: 20px;
+    line-height: 29px;
     color: rgb(165, 165, 165);
 }
 
@@ -51,14 +49,14 @@
 }
 
 .add-camp-center form textarea {
-    height: 12vw;
+    height: 201px;
     resize: none;
     border: none;
     background-color: rgb(247, 247, 247);
     border-radius: 0.3vw;
-    padding: 1.5vw;
-    font-size: 1.2vw;
-    line-height: 1.75vw;
+    padding: 25px;
+    font-size: 20px;
+    line-height: 29px;
     color: rgb(165, 165, 165);
 }
 
@@ -72,16 +70,38 @@
     outline: 0.1vw solid black;
     background: black;
     color: white;
-    padding: 1.4vw;
+    padding: 23px;
     border-radius: 0.3vw;
     font-weight: bold;
-    font-size: 1.2vw;
+    font-size: 20px;
     cursor: pointer;
-    margin-top: 0.5vw;
+    margin-top: 8px;
 }
 
 .add-camp-center form button:hover {
     background: white;
     color: black;
     transition: all 0.3s ease 0s;
+}
+
+@media screen and (max-width: 1250px) {
+    .add-camp-center {
+        text-align: left;
+        width: 621px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
+}
+
+@media screen and (max-width: 757px) {
+    .add-camp-center {
+        text-align: left;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
 }

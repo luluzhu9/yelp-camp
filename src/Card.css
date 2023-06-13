@@ -149,6 +149,55 @@
     }
 }
 
+@media screen and (max-width: 746px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        width: 35.5vw;
+        height: auto;
+        border: 1.5px solid rgb(220, 220, 220);
+        border-radius: 1vw;
+        padding: 1.45vw;
+        text-align: left;
+        gap: 1.45vw;
+    }
+    
+    .card-container img {
+        max-height: 21.5vw;
+        object-fit: cover;
+        border-radius: 1vw;
+    }
+    
+    .card-container h1 {
+        font-size: 2vw;
+        font-weight: bold;
+    }
+    
+    .card-container p {
+        font-size: 2vw;
+        line-height: 3vw;
+        color: rgb(91, 91, 91);
+    }
+    
+    .card-container button {
+        background: white;
+        color: black;
+        padding: 1.8vw;
+        border-radius: 1vw;
+        font-weight: bold;
+        font-size: 2vw;
+        border: 0.1vw solid rgb(220, 220, 220);
+        cursor: pointer;
+    }
+    
+    .card-container button:hover {
+        background: black;
+        color: white;
+        border: 0.1vw solid black;
+        transition: all 0.3s ease 0s;
+    }
+}
+
 @media screen and (max-width: 419px) {
     .card-container {
         display: flex;

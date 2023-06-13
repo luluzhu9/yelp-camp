@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     gap: 2vw;
     margin: 5vw 0vw 5vw 0vw;
+    justify-content: space-between;
 }
 
 .yelp-camp-icon {
@@ -27,6 +28,7 @@
         flex-wrap: wrap;
         gap: 6vw;
         margin: 5vw 0vw 5vw 0vw;
+        /*justify-content: space-between;*/
     }
 
     .search-page {

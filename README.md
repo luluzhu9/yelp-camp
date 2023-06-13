@@ -1,4 +1,4 @@
-## Demo: https://luluzhu9.github.io/yelp-camp/
+## ✨ Demo: https://luluzhu9.github.io/yelp-camp/
 
 ## About
 I created a CRUD web application of a community site for campers in 1 month using Javascript ES6, JSX, and CSS3, and applied ReactJS for the frontend, Firebase for the backend’s user authentication and real time database, and DayJS from NodeJS for date time objects.
